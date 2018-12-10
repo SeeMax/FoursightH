@@ -1,0 +1,163 @@
+@import "colors";
+
+.store-page {	
+	
+	/*Section Title*/
+	.shop-products {
+		
+	}
+
+	.content {
+		/*padding-top:0px;*/
+	}
+
+	h2 {
+		color:$green;
+		margin-top:30px;
+	}
+
+	hr {
+		background:$darkTeal;
+	}
+
+	.shop-hero {
+		background:$lightGray;
+		color:$green;
+
+		.content {
+			padding-top:40px;
+			padding-bottom:30px;
+		}	
+
+		h1 {
+			text-transform: uppercase;
+		}
+	}
+
+	.shop-products {
+		
+		.content {
+			padding-top:40px;
+		}	
+	}
+	
+	.products-group {
+		display: flex;
+		flex-wrap:wrap;
+		justify-content: space-around;
+	}
+
+	.product {
+		width:46%;
+		height:auto;
+		margin:40px 0;
+		
+		/*The Container For the Image and Title/Price*/
+		.woocommerce-LoopProduct-link {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;			
+			padding:30px 0 50px 0;
+			background: $lightGray;
+
+			img {
+				width:40%;
+				padding-left:2%;
+				height:100%;
+			}
+
+			.product-info {
+				width:48%;
+			}
+
+			h2 {
+				width:100%;
+				margin:0;
+				padding:15px 0;
+				font-size:24px;
+				font-weight: 400;
+				text-transform: none;
+				color:$darkTeal;
+				text-align: left;
+			}
+
+			hr {
+				width:50px;
+				border: 0;
+			  height: 1px;
+			  background:$green;
+			  margin:0;
+			  padding:0;
+			}
+
+			.price {
+				padding-top:15px;
+				width:100%;
+				margin:0 auto;
+				font-size:16px;
+				color:$darkTeal;
+				font-weight: 700;
+				text-align: left;
+
+				span {
+					font-weight: 400;
+				}
+			}
+		}
+
+		.button-area {
+			background: $darkTeal;
+
+			.woocommerce-LoopProduct-link {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;			
+			padding:0;
+			}
+		}
+
+		.button {
+			margin-top:15px;
+			margin-bottom:15px;
+			font-size: 14px;
+			min-width: 0;
+		}
+	}
+}
+
+.woocommerce a.added_to_cart {
+	width:100%;
+	color:$green;
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.store-page {
+
+	}
+}
+
+
+// 767px And Below
+@media screen and (max-width: 768px){
+
+	.store-page {
+
+		.product {
+			width:100%;
+
+			.woocommerce-LoopProduct-link {
+			
+				img {
+					width:80%;
+				}
+
+				.product-info {
+					width:80%;
+				}
+			}
+		}
+	}
+} //End 767px

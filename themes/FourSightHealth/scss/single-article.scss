@@ -1,0 +1,264 @@
+@import "colors";
+
+.single-article-page {	
+	position: relative;
+
+	.content {
+		padding-top:40px;
+		padding-bottom:40px;
+	}
+
+	.wp-post-image {
+		margin-bottom:20px;
+	}
+
+	.floated-hero {
+		margin-bottom: 0;
+
+		img {
+			float:left;
+			margin: 5px 20px 20px 0;
+		}
+	}
+
+	a {
+		color:$green;
+	}
+
+	.article-line {	
+		width:100%;
+		padding:0;
+		border-bottom:1px solid $green; 
+		margin-bottom:5px;
+	}
+
+	.pdf-link {
+		position: absolute;
+		top:10px;
+		right:24px;
+
+		a {
+			font-size:14px;
+			line-height: 20px;
+			padding:10px 20px;
+			background: $green;
+			color:white;
+		}
+	}
+
+	.single-article-header {
+		position: relative;
+		width:90%;
+		padding: 30px 0 30px 0;
+	}
+
+	img {
+
+	}
+
+	.single-article-content {
+		position: relative;
+		text-align: left;
+		width:90%;
+		height: 100%;
+		margin-bottom:60px;
+		margin-top:35px;
+	}
+
+	ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    padding-top:.4em;
+    margin-bottom: 1.9em;
+
+    a {
+			color:black;
+			border-bottom:2px solid $green;			
+			transition: color.3s;
+			/*font-weight:700;*/
+
+			&:hover {
+				color:$green;
+			}
+		}
+   }
+
+ li {
+ 		font:400 15px/1.5 'Open Sans', sans-serif;
+  	margin-bottom:14px;
+  	font-weight:400;
+  }
+
+	.single-article-tags {
+		text-align: left;
+		width:100%;
+		padding:12px 5%;
+		background:$green;
+		color:$gray;
+		margin-bottom: 30px;
+		
+		a {
+			color:white;
+		}
+	}
+
+	.single-article-edit-link {
+		margin-top:60px;
+		text-align: left;
+		width:90%;
+	}
+
+	.single-article-comment {
+		display: none;
+		margin:30px 0;
+		text-align: left;
+		width:100%;
+		padding:0 5%;
+	}
+
+	.article-date {
+		position: relative;
+		width:100%;
+		text-align:left;
+		color:$gray;
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	.article-author {
+		text-align: left;
+		font-size: 16px;
+		font-weight: 400;		
+		color: $gray;
+
+		span {
+			color:$green;
+		}
+
+		a {
+			color:$green;
+			text-transform: capitalize;
+		}
+	}
+
+	h1 {
+		font-size:40px;
+		font-weight: 800;
+		text-transform: uppercase;
+		color:$darkTeal;
+		text-align: left;	
+		padding:4px 0 2px 0;	
+	}
+	
+	h2 {
+		font-size:30px;
+		margin-bottom: 10px; 
+		font-weight: 700;
+		text-transform: uppercase;
+		color:$teal;
+		text-align: left;		
+	}
+
+	p {
+		font:400 16px/1.5 'Open Sans', sans-serif;
+		padding-left:0;
+		padding-right:0;	
+		margin-bottom: 1.6rem;
+
+		a {
+			color:black;
+			border-bottom:2px solid $green;			
+			transition: color.3s;
+			/*font-weight:700;*/
+
+			&:hover {
+				color:$green;
+			}
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+	
+	p:empty {
+   display: none;
+	}
+
+	.dave-bio-footer {
+		display: flex;
+		position: relative;
+		flex-wrap:wrap;
+		align-items: flex-start;
+		top:-5px;
+		width:100%;
+		height:auto;
+		padding:30px 5% 10px 5%;
+		background: $lightGray;
+
+		img {
+			width:180px;
+			height:auto;
+			margin-right:20px;
+			margin-bottom:20px;
+		}
+
+		p {
+			flex:1;
+			text-align: left;
+			font-size: 14px;
+		}
+	}
+}
+
+/* use a sprite file with darker transport icons */
+.mejs-container .mejs-controls {
+	top:20px !important;
+}
+
+/* use a sprite file with darker transport icons */
+.mejs-container, .mejs-container .mejs-controls {
+	background:$darkTeal !important;
+	height:50px !important;
+}
+
+/* change the color of the progress bar */
+.mejs-controls .mejs-time-rail .mejs-time-total {
+	background: #ccc !important;
+}
+
+/* change the color of the current time bar */
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	background: $green !important;
+}
+
+/* change the color of the file loading bar */
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+	background: white !important;
+}
+
+.podcast-button {
+	margin:20px auto 40px auto;
+}
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.single-article {
+
+		
+	}
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+	.single-article {
+
+		.pdf-button {
+			display: none;
+		}
+	}
+} //End 767px
