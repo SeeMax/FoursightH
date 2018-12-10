@@ -1,62 +1,28 @@
 <?php /* Template Name: Insights */ get_header(); ?>
 	<main class="insights-page" role="main">
 	<?php while ( have_posts() ) : the_post(); ?>
-		<section class="insight-category-buttons">
+		<section class="insights-category-buttons">
 			<div class="content">
-				category_highlights
-				single_category_highlight
-				<!-- <?php
-					$term1 = get_field('button_one_dest');
-					$term2 = get_field('button_two_dest');
-					$term3 = get_field('button_three_dest');
-					$term4 = get_field('button_four_dest');
-					$term1Link = preg_replace('/\s+/', '-', $term1->name);
-					$term2Link = preg_replace('/\s+/', '-', $term2->name);
-					$term3Link = preg_replace('/\s+/', '-', $term3->name);
-					$term4Link = preg_replace('/\s+/', '-', $term4->name);
-				;?> -->
-				<!-- <div class="article-button-group">
-					<div class="article-button button">
-						<a href="../category/<?php echo strtolower($term1Link); ?>"></a>
-						<?php echo $term1->name; ?>
-					</div>
-					<div class="article-button button">
-						<a href="../category/<?php echo strtolower($term2Link); ?>"></a>
-						<?php echo $term2->name; ?>
-					</div>
-					<div class="article-button button">
-						<a href="../category/<?php echo strtolower($term3Link); ?>"></a>
-						<?php echo $term3->name; ?>
-					</div>
-					<div class="article-button button">
-						<a href="../category/<?php echo strtolower($term4Link); ?>"></a>
-						<?php echo $term4->name; ?>
-					</div>
-				</div> -->
-
-				<div class="article-button-group">
-					<div class="article-button button">
-						<a href="../category/commentaries"></a>
-						Market Corner Commentaries
-					</div>
-					<div class="article-button button">
-						<a href="../category/podcast-2"></a>
-						Podcasts
-					</div>
-					<div class="article-button button">
-						<a href="../store"></a>
-						Market vs. Medicine
-					</div>
-				</div>
+			<?php $terms = get_field('insight_highlights');
+				if( $terms ): ?>
+					<?php foreach( $terms as $term ): ?>
+						<div class="button">
+							<span class="insights-button-term">
+								<?php echo $term->name;?>
+							</span>
+							<span class="insights-button-count">
+								<?php echo $term->count; ?>
+							</span>
+							<a class="c-block-fill" href="<?php echo get_term_link( $term ); ?>"></a>
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</div>
 		</section>
-		<section class="articles-section">
+		<section class="insight-posts-section">
 			<div class="content">
-				<div class="articles-group">
-					<h3><?php the_field('insights_title'); ?></h3>
-					<?php echo do_shortcode('[ajax_load_more id="ajax-loader-01" container_type="div" css_classes="blog-grid" post_type="post" scroll_distance="0" posts_per_page="9" transition_container="false" images_loaded="true" button_label="Load More"]'); ?>
-				</div>
-				<div class="articles-sidebar articlesSidebar">
+
+				<div class="custom-sidebar c-width-25">
 					<div class="search-bar-box">
 						<h3>Search Insights</h3>
 						<form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
@@ -64,7 +30,65 @@
 							<button class="search-submit" type="submit" role="button"><?php _e( 'Search', 'html5blank' ); ?></button>
 						</form>
 					</div>
-					<?php get_sidebar(); ?>
+				</div>
+
+				<div class="fullbar c-width-75">
+					<?php $args = array(
+		        'post_type' => 'post',
+		        'posts_per_page' => 5,
+		        'order' => 'DESC',
+		        'orderby' => 'date'
+		      ); $the_query = new WP_Query($args);?>
+		      <?php if ($the_query->have_posts()) : ?>
+		        <?php while ($the_query->have_posts()) : $the_query->the_post();?>
+
+							<div class="single-insight-preview">
+								<?php $category = get_the_category();?>
+								<?php $firstCategory = $category[0]->cat_name;?>
+								<h5><?php echo $firstCategory;?></h5>
+								<h2><?php the_title();?></h2>
+
+								<div class="insight-preview-content c-width-66">
+									<div class="insight-author">
+										By <?php the_author();?> | <?php echo get_the_date(); ?>
+									</div>
+									<hr />
+									<p class="insight-excerpt">
+										<?php the_excerpt();?>
+									</p>
+									<div class="button">
+										<?php if( has_category( $category = 'podcast') ) {
+											echo "Listen";
+										} else {
+											echo "Read More";
+										}	;?>
+										<a class="c-block-fill" href="<?php the_permalink();?>"></a>
+									</div>
+									<div class="pdf-link">
+										<?php if ( get_field('pdf_link')) :?>
+											<a href="<?php the_field('pdf_link');?>" target="_blank">
+												Download <i class="fa fa-download" aria-hidden="true"></i>
+											</a>
+										<?php endif; ?>
+									</div>
+								</div>
+
+								<div class="insight-preview-image c-width-33">
+									<?php if ( get_the_post_thumbnail($post_id) != '' ) {
+										echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
+											the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
+										echo '</a>';
+									} else {
+										echo '<img src="';
+										echo catch_that_image();
+										echo '" alt="" />';
+									}	;?>
+								</div>
+
+							</div>
+						<?php endwhile; ?>
+	        <?php wp_reset_query(); ?>
+	      <?php endif; ?>
 				</div>
 			</div>
 		</section>

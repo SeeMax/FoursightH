@@ -1,0 +1,22 @@
+@import "colors";
+
+.custom-sidebar {
+	border-top:1px solid $lightGreen;
+
+	.twitter-timeline {
+		margin-top:6px !important;
+	}
+}
+
+.fullbar {
+	padding-left:25px;
+
+	.fullbar-content {
+		border-top:1px solid $lightGreen;
+		padding:40px 0px;
+	}
+
+	h5 {
+		margin-bottom:5px;
+	}
+}

@@ -16,7 +16,6 @@ img {
 	height:auto;
 }
 
-
 .wrapper {
 	width:100%;
 	min-height: 100%;
@@ -165,8 +164,8 @@ hr {
 	text-transform: uppercase;
 	color:white;
 	background:$teal;
-	box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.5);
-	transition:all .25s ease-out;
+	box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.45);
+	transition:all .2s ease-out;
 
 	a {
 		display: block;
@@ -185,11 +184,11 @@ hr {
 		width:10px;
 		height:10px;
 		background-image: url('./img/button-arrow-white.svg');
-		transition:all .25s ease;
+		transition:all .2s ease;
 	}
 
 	&:hover {
-		box-shadow: 0px 1px 1px -1px rgba(0,0,0,0.75);
+		box-shadow: 0px 1px 1px -1px rgba(0,0,0,0.65);
 
 		&:after {
 			transform: translateX(-2px);
@@ -218,27 +217,6 @@ hr {
 
 	&:hover {
 		box-shadow: 0px 1px 1px -1px rgba(0,0,0,0);
-	}
-}
-
-.custom-sidebar {
-	border-top:1px solid $lightGreen;
-
-	.twitter-timeline {
-		margin-top:6px !important;
-	}
-}
-
-.fullbar {
-	padding-left:25px;
-
-	.fullbar-content {
-		border-top:1px solid $lightGreen;
-		padding:40px 0px;
-	}
-
-	h5 {
-		margin-bottom:5px;
 	}
 }
 

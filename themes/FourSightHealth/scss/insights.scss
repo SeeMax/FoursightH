@@ -1,17 +1,82 @@
 @import "colors";
 
-.insights {
+.insights-page {
 
-	.insight-category-buttons {
+	.insights-category-buttons {
+
+		.content {
+			width:100%;
+			height:auto;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-top:45px;
+			padding-bottom:45px;
+		}
 
 		.button {
+			position: relative;
 			background: white;
 			border: 1px solid $teal;
 			color:$teal;
+			display: flex;
+			align-items: stretch;
+			padding:0px;
+			margin: 10px 12px;
+
+			&:after {
+				display: none;
+			}
 		}
+	}
+
+	.insights-button-term {
+		padding:15px 12px 10px 12px;
+	}
+
+	.insights-button-count {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height:100%;
+		width:auto;
+		padding:14px 12px 10px 12px;
+		border-left:1px solid $teal;
 	}
 }
 
+.insight-posts-section {
+
+	.content {
+		padding-top:0px;
+	}
+
+	.fullbar {
+
+	}
+
+	.custom-sidebar {
+
+	}
+}
+
+.single-insight-preview {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.insight-preview-content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	hr {
+		color:$lightGray;
+		width:20px;
+		height:1px;
+		text-align: left;
+		margin:0;
+	}
+}
 
 // 1024px And Below
 @media screen and (max-width: 1024px){
