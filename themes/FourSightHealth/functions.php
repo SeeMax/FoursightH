@@ -465,6 +465,7 @@ add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_theme_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_testiominial');
 add_action('init', 'create_post_type_bio');
+add_action('init', 'create_post_type_authorbios');
 add_action('init', 'create_post_type_client');
 add_action('init', 'create_post_type_affiliations');
 add_action('init', 'create_post_type_advisors');
@@ -519,24 +520,44 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 	Custom Post Types
 \*------------------------------------*/
 
-function create_post_type_testiominial()
+function create_post_type_authorbios()
 {
   register_taxonomy_for_object_type('category', 'theme_template'); // Register Taxonomies for Category
   register_taxonomy_for_object_type('post_tag', 'theme_template');
-    register_post_type( 'testimonial',
+    register_post_type( 'authorbios',
         array(
             'labels' => array(
-                'name' => ('Testimonials'),
-                'singular_name' => ('Testimonial')
+                'name' => ('Author Bios'),
+                'singular_name' => ('Author Bio')
             ),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'testimonial'),
+        'rewrite' => array('slug' => 'Author Bios'),
         'supports' => array('title','editor'),
-        'menu_icon'   => 'dashicons-media-text'
+        'menu_icon' => 'dashicons-editor-quote',
+        'menu_position' => 4
         )
     );
 }
+
+// function create_post_type_testiominial()
+// {
+//   register_taxonomy_for_object_type('category', 'theme_template'); // Register Taxonomies for Category
+//   register_taxonomy_for_object_type('post_tag', 'theme_template');
+//     register_post_type( 'testimonial',
+//         array(
+//             'labels' => array(
+//                 'name' => ('Testimonials'),
+//                 'singular_name' => ('Testimonial')
+//             ),
+//         'public' => true,
+//         'has_archive' => true,
+//         'rewrite' => array('slug' => 'testimonial'),
+//         'supports' => array('title','editor'),
+//         'menu_icon'   => 'dashicons-media-text'
+//         )
+//     );
+// }
 
 function create_post_type_bio()
 {

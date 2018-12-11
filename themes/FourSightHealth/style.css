@@ -292,11 +292,8 @@ ol {
   margin: 20px 0; }
 
 hr {
-  width: 50px;
   border: 0;
-  height: 2px;
-  background: #A8C643;
-  margin: 0 auto;
+  margin: 0;
   padding: 0; }
 
 .button, .woocommerce a.button, .woocommerce .cart input.button {
@@ -2818,7 +2815,15 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  border-top: 1px solid #D0EF68;
+  padding: 35px 0px 50px 0; }
+
+.insight-author-date {
+  font-size: 14px;
+  color: #7F7F7F; }
+  .insight-author-date a {
+    color: #3E8B94; }
 
 .insight-preview-content {
   display: -webkit-box;
@@ -2832,11 +2837,11 @@ footer {
       -ms-flex-align: start;
           align-items: flex-start; }
   .insight-preview-content hr {
-    color: #E8E8E9;
+    margin-top: 1em;
+    background: #B3B3B3;
     width: 20px;
     height: 1px;
-    text-align: left;
-    margin: 0; }
+    text-align: left; }
 
 .mailchimp input[type=email] {
   border: 1px solid #E8E8E9;

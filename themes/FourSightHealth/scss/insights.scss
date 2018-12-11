@@ -62,6 +62,17 @@
 .single-insight-preview {
 	display: flex;
 	flex-wrap: wrap;
+	border-top: 1px solid $lightGreen;
+	padding:35px 0px 50px 0;
+}
+
+.insight-author-date {
+	font-size:14px;
+	color:$gray;
+
+	a {
+		color:$teal;
+	}
 }
 
 .insight-preview-content {
@@ -70,11 +81,11 @@
 	align-items: flex-start;
 
 	hr {
-		color:$lightGray;
+		margin-top:1em;
+		background:$medGray;
 		width:20px;
 		height:1px;
 		text-align: left;
-		margin:0;
 	}
 }
 

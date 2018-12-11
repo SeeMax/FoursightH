@@ -49,8 +49,12 @@
 								<h2><?php the_title();?></h2>
 
 								<div class="insight-preview-content c-width-66">
-									<div class="insight-author">
-										By <?php the_author();?> | <?php echo get_the_date(); ?>
+									<div class="insight-author-date">
+
+										By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
+										
+
+
 									</div>
 									<hr />
 									<p class="insight-excerpt">
