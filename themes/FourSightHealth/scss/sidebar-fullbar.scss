@@ -1,6 +1,7 @@
 @import "colors";
 
 .custom-sidebar {
+	position:relative;
 	border-top:1px solid $lightGreen;
 
 	.twitter-timeline {
@@ -9,6 +10,7 @@
 }
 
 .fullbar {
+	position:relative;
 	padding-left:25px;
 
 	.fullbar-content {

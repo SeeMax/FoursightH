@@ -43,6 +43,9 @@
 		        <?php while ($the_query->have_posts()) : $the_query->the_post();?>
 
 							<div class="single-insight-preview">
+								<div class="insight-preview-sponsor-box">
+									Sponsored by Cain Brothers
+								</div>
 								<?php $category = get_the_category();?>
 								<?php $firstCategory = $category[0]->cat_name;?>
 								<h5><?php echo $firstCategory;?></h5>
@@ -52,7 +55,7 @@
 									<div class="insight-author-date">
 
 										By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
-										
+
 
 
 									</div>
@@ -60,20 +63,28 @@
 									<p class="insight-excerpt">
 										<?php the_excerpt();?>
 									</p>
-									<div class="button">
-										<?php if( has_category( $category = 'podcast') ) {
-											echo "Listen";
-										} else {
-											echo "Read More";
-										}	;?>
-										<a class="c-block-fill" href="<?php the_permalink();?>"></a>
-									</div>
-									<div class="pdf-link">
-										<?php if ( get_field('pdf_link')) :?>
-											<a href="<?php the_field('pdf_link');?>" target="_blank">
-												Download <i class="fa fa-download" aria-hidden="true"></i>
-											</a>
-										<?php endif; ?>
+									<div class="preview-links-area">
+										<div class="button">
+											<?php if( has_category( $category = 'podcast') ) {
+												echo "Listen";
+											} else {
+												echo "Read More";
+											}	;?>
+											<a class="c-block-fill" href="<?php the_permalink();?>"></a>
+										</div>
+										<div class="pdf-link">
+
+											Download <i class="fa fa-download" aria-hidden="true"></i>
+											<i class="fas fa-user"></i> <!-- uses solid style -->
+											<i class="far fa-user"></i> <!-- uses regular style -->
+											<i class="fal fa-user"></i> <!-- uses light style -->
+
+											<?php if ( get_field('pdf_link')) :?>
+												<a href="<?php the_field('pdf_link');?>" target="_blank">
+													Download <i class="fa fa-download" aria-hidden="true"></i>
+												</a>
+											<?php endif; ?>
+										</div>
 									</div>
 								</div>
 

@@ -165,7 +165,7 @@ function theme_styles()
     wp_enqueue_style('theme_fonts'); // Enqueue it!
 
     // FONTS AWESOME ICONS
-    wp_register_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '1.0', 'all');
+    wp_register_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '5.5', 'all');
     wp_enqueue_style('fontawesome'); // Enqueue it!
 
     // SLICK SLIDER CSS-1
