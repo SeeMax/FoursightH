@@ -1,27 +1,31 @@
 <?php get_header(); ?>
-	<main class="archive-page" role="main">
-		<section class="archive-hero articlesTrigger">
-			<div class="content">						
-				<h2><?php single_cat_title(); ?></h2>
-				<?php if( is_category( 'podcast') ): ?>
-   				<div class="button">
-						<a href='https://itunes.apple.com/us/podcast/4sighthealth-market-corner-conversations/id1302461771?mt=2' target="_blank"></a>
-						View on iTunes
-					</div>
-				<?php endif; ?>
-			</div>
-		</section>
-		<section class="archive-section archiveTrigger">
-			<div class="content">	
-				<div class="archive-group">
-					<?php while ( have_posts() ) : the_post(); ?>			
-						<?php get_template_part('loop'); ?>
-					<?php endwhile; ?><!-- END LOOP -->	
+	<main class="insights-page archive-page" role="main">
+		<?php if( is_category( 'podcasts')):?>
+			<section class="insights-category-buttons">
+				<div class="content">
+				<?php $terms = get_field('podcast_buttons', 'options');
+					if( $terms ): ?>
+						<?php foreach( $terms as $term ): ?>
+							<div class="button">
+								<span class="insights-button-term">
+									<?php echo $term->name;?>
+								</span>
+								<span class="insights-button-count">
+									<?php echo $term->count; ?>
+								</span>
+								<a class="c-block-fill" href="<?php echo get_term_link( $term ); ?>"></a>
+							</div>
+						<?php endforeach; ?>
+					<?php endif; ?>
 				</div>
-				<div class="archive-sidebar archiveSidebar">
-					<?php get_sidebar(); ?>
+			</section>
+		<?php else:?>
+			<section class="insights-category-title">
+				<div class="content">
+					<h3><?php single_cat_title(); ?></h3>
 				</div>
-			</div>
-		</section>
+			</section>
+		<?php endif; ?>
+		<?php get_template_part( 'partials/_insights-loop' ); ?>
 	</main>
 <?php get_footer(); ?>

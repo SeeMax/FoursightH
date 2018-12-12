@@ -17,7 +17,7 @@ $(function featureSlider() {
 			  pauseOnHover:true,
 			  cssEase: 'linear',
 			  appendDots:$('.featuredDots')
-			})
+			});
 		} else {
 			$('.featuredSlider').slick({
 		    slidesToShow: 1,
@@ -29,7 +29,7 @@ $(function featureSlider() {
 			  autoplaySpeed: 3000,
 			  pauseOnHover:true,
 			  cssEase: 'linear',
-			})
+			});
 		}
 
 

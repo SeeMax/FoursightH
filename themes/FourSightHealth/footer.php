@@ -19,18 +19,23 @@
 
 					<div class="footer-column footer-social c-width-25">
 						<?php if( get_field('tw_link', 'option') ): ?>
-							<i class="fa fa-twitter">
+							<i class="fab fa-twitter">
 								<a class="c-block-fill" href="<?php the_field('tw_link', 'option'); ?>" target="_blank"></a>
 							</i>
 						<?php endif; ?>
 						<?php if( get_field('linkedin_link', 'option') ): ?>
-							<i class="fa fa-linkedin">
+							<i class="fab fa-linkedin-in">
 								<a class="c-block-fill" href="<?php the_field('linkedin_link', 'option'); ?>" target="_blank"></a>
 							</i>
 						<?php endif; ?>
 						<?php if( get_field('fb_link', 'option') ): ?>
-							<i class="fa fa-facebook">
+							<i class="fab fa-facebook-f">
 								<a class="c-block-fill" href="<?php the_field('fb_link', 'option'); ?>" target="_blank"></a>
+							</i>
+						<?php endif; ?>
+						<?php if( get_field('yt_link', 'option') ): ?>
+							<i class="fab fa-youtube">
+								<a class="c-block-fill" href="<?php the_field('yt_link', 'option'); ?>" target="_blank"></a>
 							</i>
 						<?php endif; ?>
 					</div>

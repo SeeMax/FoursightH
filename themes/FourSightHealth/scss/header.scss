@@ -59,6 +59,10 @@
 
 			a {
 				color:$darkGray;
+
+				&:hover {
+					color:$teal;
+				}
 			}
 
 			i {

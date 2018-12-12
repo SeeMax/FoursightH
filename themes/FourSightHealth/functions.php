@@ -272,7 +272,9 @@ function html5wp_pagination()
         'base' => str_replace($big, '%#%', get_pagenum_link($big)),
         'format' => '?paged=%#%',
         'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
+        'total' => $wp_query->max_num_pages,
+        'prev_text'=> 'Previous',
+        'next_text'=> 'Next'
     ));
 }
 
@@ -395,7 +397,7 @@ add_action('init', 'df_disable_comments_admin_bar');
 
 
 // Threaded Comments
-function enable_threaded_comments()
+
 {
     if (!is_admin()) {
         if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -674,6 +676,16 @@ if (function_exists('acf_add_options_page')) {
                 'icon_url' => 'dashicons-editor-aligncenter',
         'position' => 3
     ));
+
+    acf_add_options_page(array(
+        'page_title'    => 'Podcast Buttons',
+        'menu_title'    => 'Podcast Buttons',
+        'menu_slug'    => 'podcast_buttons',
+        'capability'    => 'edit_posts',
+        'redirect'    => false,
+                'icon_url' => 'dashicons-playlist-video',
+        'position' => 5
+    ));
 }
 
 
@@ -764,17 +776,17 @@ function special_nav_class ($classes, $item) {
     Show more posts on archive page
 \*-----------------------------------------------*/
 
-function wpse63424_filter_pre_get_posts( $query ) {
-    if ( ! is_main_query() ) {
-        return $query;
-    } else {
-        if ( is_category() || is_tag() ) {
-            $query->set( 'posts_per_page',-1 );
-        }
-        return $query;
-    }
-}
-add_filter( 'pre_get_posts', 'wpse63424_filter_pre_get_posts' );
+// function wpse63424_filter_pre_get_posts( $query ) {
+//     if ( ! is_main_query() ) {
+//         return $query;
+//     } else {
+//         if ( is_category() || is_tag() ) {
+//             $query->set( 'posts_per_page',-1 );
+//         }
+//         return $query;
+//     }
+// }
+// add_filter( 'pre_get_posts', 'wpse63424_filter_pre_get_posts' );
 
 /*------------------------------------*\
 	ShortCode Functions
@@ -833,4 +845,10 @@ function no_nopaging($query) {
     }
 }
 add_action('parse_query', 'no_nopaging');
+
+// Change Read More Excerpt to 3 dots
+function wpdocs_excerpt_more( $more ) {
+    return ' ...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 ?>
