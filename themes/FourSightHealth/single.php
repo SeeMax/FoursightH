@@ -1,110 +1,80 @@
 <?php get_header(); ?>
-
-	<main class="single-article-page" role="main">
+	<main class="single-insight-page" role="main">
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
-		<section class="articles-section articlesTrigger">
-			<div id="post-<?php the_ID(); ?>" <?php post_class('content'); ?>>
-				<div class="article-line"></div>
-				<div class="single-article-header">
-					<div class="article-date">
-						<?php the_date(); ?>
-					</div>
-					<h1><?php the_title(); ?></h1>
-					<div class="article-author">
-						By
-						<?php if ( get_field('custom_authors')) :?>
-							<?php the_field('custom_authors');?>
-						<?php else:?>
-							<?php the_author(); ?>
+		<section class="full-insight">
+			<div class="content">
+				<?php get_template_part( 'partials/_custom-sidebar' ); ?>
+				<div class="fullbar c-width-75">
+					<div class="single-insight">
+						<?php if ( get_field('pdf_link')) :?>
+							<a class="full-article-download" href="<?php the_field('pdf_link');?>" target="_blank">
+								<i class="fas fa-arrow-to-bottom"></i>
+							</a>
 						<?php endif; ?>
-						in <?php _e( '', 'html5blank' ); the_category(' / '); // Separated by commas ?>
-					</div>
-				</div>
-				<div class="pdf-link">
-				<?php if ( get_field('pdf_link')) :?>
-					<a href="<?php the_field('pdf_link');?>" target="_blank">
-						<i class="fa fa-download" aria-hidden="true"></i>
-						Download as PDF
-					</a>
-				<?php endif; ?>
 
-			</div>
-				<div class="article-line"></div>
-				<div class="single-article-content">
-
-					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-						<?php $wrapCheck = get_field('featured_image_text_wrap');?>
-						<?php if( $wrapCheck && in_array('wrap', $wrapCheck) ): ?>
-							<p class="floated-hero">
-								<?php the_post_thumbnail(); ?>
-							</p>
-						<?php else:?>
-							<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-						<?php endif; ?>
-					<?php endif; ?>
-
-
-					<?php the_content();?>
-				</div>
-				<?php if( has_category( $category = 'podcast') ): ?>
-   				<div class="button podcast-button">
-						<a href='https://itunes.apple.com/us/podcast/4sighthealth-market-corner-conversations/id1302461771?mt=2' target="_blank"></a>
-						View on iTunes
-					</div>
-				<?php endif; ?>
-				<!-- <div class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></div>
-				<div class="single-article-tags">
-					<?php the_tags( __( 'Tags: ', 'html5blank' ), ' / ', '<br>'); // Separated by commas with a line break at the end ?>
-				</div> -->
-				<!-- <div class="single-article-edit-link">
-					<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-				</div> -->
-				<!-- <div class="single-article-comment">
-					<?php comments_template(); ?>
-				</div> -->
-				<div class="article-line"></div>
-				Here
-				<?php
-					$args = array(
-					'post_type' => 'authorbios',
-					);
-					$the_query = new WP_Query( $args );
-				?>
-				<?php if ( $the_query->have_posts() ) :
-					while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<?php $authorBioImage = get_field('author_bio_image');?>
-						<img src="<?php $authorBioImage[url];?>">
-						<?php the_field('author_bio_name');?>
-						<?php the_field('author_bio_title');?>
-						<?php the_field('author_bio_description');?>
-					<?php endwhile;?>
-					<?php wp_reset_query(); ?>
-				<?php endif; ?>
-
-
-
-				<?php if ( get_field('daves_bio', 'options')) :?>
-
-					<?php $bioCheck = get_field('hide_daves_bio');?>
-					<?php if( $bioCheck && in_array('hideBio', $bioCheck) ): ?>
-
-					<?php else:?>
-						<div class="dave-bio-footer">
-							<img src="<?php the_field('daves_image', 'options');?>" alt="David W. Johnson">
-							<p><?php the_field('daves_bio', 'options');?></p>
+					<?php if(get_field('post_sponsor')):?>
+            <div class="insight-preview-sponsor-box">
+              Sponsored by <?php the_field('post_sponsor');?>
+            </div>
+          <?php endif;?>
+          <!-- IF THERE IS A SELECTED CATEGORY SHOW IT. IF NOT SHOW THE FIRST CATEGORY -->
+          <?php
+            $term = get_field('preview_featured_category');
+          ?>
+          <?php if( $term ): ?>
+            <h5>
+              <a href='<?php echo get_category_link($term);?>'>
+                <?php echo $term->name; ?>
+              </a>
+            </h5>
+          <?php endif;?>
+          <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+          <div class="insight-author-date">
+            <?php if( has_category( $category = 'podcasts')):?>
+              <?php echo get_the_date(); ?>
+            <?php else:?>
+							<?php if ( get_field('custom_authors')) :?>
+				        By <?php the_field('custom_authors');?> | <?php echo get_the_date(); ?>
+				      <?php else:?>
+				        By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
+				      <?php endif; ?>
+            <?php endif;?>
+          </div>
+          <div class="insight-content">
+						<div class="insight-category-bar">
+							<?php
+		            $term = get_field('preview_featured_category');
+		            $normalCategory = get_the_category();
+		          ?>
+	            <?php foreach( $normalCategory as $category ):?>
+	              <?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
+	                <h5>
+	                  <a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
+	                </h5>
+	              <?php endif;?>
+	            <?php endforeach;?>
 						</div>
-					<?php endif; ?>
+						<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
+				      <?php $wrapCheck = get_field('featured_image_text_wrap');?>
+				      <?php if( $wrapCheck && in_array('wrap', $wrapCheck) ): ?>
+				        <p class="floated-hero">
+				          <?php the_post_thumbnail(); ?>
+				        </p>
+				      <?php else:?>
+				        <?php the_post_thumbnail(); // Fullsize image for the single post ?>
+				      <?php endif; ?>
+				    <?php endif; ?>
+            <?php the_content();?>
 
-				<?php endif; ?>
+						author_bios
+					</div>
 
-			<?php endwhile; ?>
-			<?php else: ?>
-				<article>
-					<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
-				</article>
-		</div>
-	<?php endif; ?>
-	</section>
+					<?php endwhile; ?>
+
+				</div>
+			<?php endif; ?>
+				</div>
+			</div>
+		</section>
 	</main>
-
 <?php get_footer(); ?>

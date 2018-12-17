@@ -31,7 +31,5 @@ $(function featureSlider() {
 			  cssEase: 'linear',
 			});
 		}
-
-
 	});
-});
+}());

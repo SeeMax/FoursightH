@@ -1,15 +1,112 @@
 @import "colors";
 
-.single-article-page {	
-	position: relative;
+.single-insight-page {
 
 	.content {
-		padding-top:40px;
-		padding-bottom:40px;
+
+	}
+
+	img {
+		width:auto;
+	}
+
+	.single-insight {
+		padding-top:45px;
+	}
+
+	.full-insight {
+
+		.insight-preview-sponsor-box {
+			top:auto;
+			bottom:100%;
+			width:100%;
+			text-align: right;
+			padding:9px;
+			border-left:0px solid white;
+		}
+
+		.insight-content {
+			padding-right:0px;
+		}
+
+		.full-article-download {
+			position: absolute;
+			top:0;
+			right:158px;
+			box-shadow: -3px 3px 3px -1px rgba(0,0,0,0.05);
+			transition:box-shadow .2s ease;
+			color:$teal !important;
+			padding:4px 12px 4px 12px;
+
+			&:hover {
+				box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.25);
+				opacity:1 !important;
+			}
+		}
+
+		.sharedaddy {
+			position: absolute;
+			top:0;
+			right:0px;
+
+			ul {
+
+				li {
+					padding-left:0px;
+
+					&:before {
+						display: none;
+						border:1px solid $lightGreen;
+					}
+				}
+			}
+
+			.sd-social-icon .sd-content ul li[class*='share-'] a.sd-button {
+				box-shadow: -3px 3px 3px -1px rgba(0,0,0,0.05);
+				border-radius:0px;
+				transition:box-shadow .2s ease;
+				color:$teal !important;
+				padding:6px 6px 4px 6px;
+
+				&:before {
+					font-size:22px;
+				}
+
+				&:hover {
+					box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.25);
+					opacity:1 !important;
+				}
+			}
+
+			.sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button {
+				color:$teal !important;
+			}
+
+			ul {
+
+				li {
+					margin-right:0px;
+					margin-left:5px;
+
+					a {
+						background: white !important;
+						color:$teal !important;
+					}
+				}
+			}
+
+			.share-end {
+				display: none;
+			}
+		}
+	}
+
+	.single-insight-section {
+
 	}
 
 	.wp-post-image {
-		margin-bottom:20px;
+		margin:1em 0px;
 	}
 
 	.floated-hero {
@@ -21,168 +118,23 @@
 		}
 	}
 
-	a {
-		color:$green;
-	}
-
-	.article-line {	
+	.insight-category-bar {
 		width:100%;
-		padding:0;
-		border-bottom:1px solid $green; 
-		margin-bottom:5px;
-	}
+		height:auto;
+		border-top:1px solid $lightGray;
+		border-bottom:1px solid $lightGray;
+		padding:10px;
+		text-align: center;
+		margin:35px 0px 1em 0px;
 
-	.pdf-link {
-		position: absolute;
-		top:10px;
-		right:24px;
-
-		a {
-			font-size:14px;
-			line-height: 20px;
-			padding:10px 20px;
-			background: $green;
-			color:white;
-		}
-	}
-
-	.single-article-header {
-		position: relative;
-		width:90%;
-		padding: 30px 0 30px 0;
-	}
-
-	img {
-
-	}
-
-	.single-article-content {
-		position: relative;
-		text-align: left;
-		width:90%;
-		height: 100%;
-		margin-bottom:60px;
-		margin-top:35px;
-	}
-
-	ul {
-    list-style-type: disc;
-    padding-left: 40px;
-    padding-top:.4em;
-    margin-bottom: 1.9em;
-
-    a {
-			color:black;
-			border-bottom:2px solid $green;			
-			transition: color.3s;
-			/*font-weight:700;*/
-
-			&:hover {
-				color:$green;
-			}
-		}
-   }
-
- li {
- 		font:400 15px/1.5 'Open Sans', sans-serif;
-  	margin-bottom:14px;
-  	font-weight:400;
-  }
-
-	.single-article-tags {
-		text-align: left;
-		width:100%;
-		padding:12px 5%;
-		background:$green;
-		color:$gray;
-		margin-bottom: 30px;
-		
-		a {
-			color:white;
-		}
-	}
-
-	.single-article-edit-link {
-		margin-top:60px;
-		text-align: left;
-		width:90%;
-	}
-
-	.single-article-comment {
-		display: none;
-		margin:30px 0;
-		text-align: left;
-		width:100%;
-		padding:0 5%;
-	}
-
-	.article-date {
-		position: relative;
-		width:100%;
-		text-align:left;
-		color:$gray;
-		font-size: 16px;
-		font-weight: 400;
-	}
-
-	.article-author {
-		text-align: left;
-		font-size: 16px;
-		font-weight: 400;		
-		color: $gray;
-
-		span {
-			color:$green;
+		h5 {
+			display: inline-block;
+			margin-bottom:0px;
 		}
 
-		a {
-			color:$green;
-			text-transform: capitalize;
+		.category-divider {
+			color:$teal;
 		}
-	}
-
-	h1 {
-		font-size:40px;
-		font-weight: 800;
-		text-transform: uppercase;
-		color:$darkTeal;
-		text-align: left;	
-		padding:4px 0 2px 0;	
-	}
-	
-	h2 {
-		font-size:30px;
-		margin-bottom: 10px; 
-		font-weight: 700;
-		text-transform: uppercase;
-		color:$teal;
-		text-align: left;		
-	}
-
-	p {
-		font:400 16px/1.5 'Open Sans', sans-serif;
-		padding-left:0;
-		padding-right:0;	
-		margin-bottom: 1.6rem;
-
-		a {
-			color:black;
-			border-bottom:2px solid $green;			
-			transition: color.3s;
-			/*font-weight:700;*/
-
-			&:hover {
-				color:$green;
-			}
-		}
-
-		&:empty {
-			display: none;
-		}
-	}
-	
-	p:empty {
-   display: none;
 	}
 
 	.dave-bio-footer {
@@ -245,9 +197,9 @@
 // 1024px And Below
 @media screen and (max-width: 1024px){
 
-	.single-article {
+	.single-insight {
 
-		
+
 	}
 }
 
@@ -255,10 +207,14 @@
 // 767px And Below
 @media screen and (max-width: 767px){
 
-	.single-article {
+	.single-insight-page {
 
-		.pdf-button {
-			display: none;
+		.full-insight {
+
+			.insight-preview-sponsor-box {
+				border-top:1px solid $lightGreen;
+				text-align: center;
+			}
 		}
 	}
 } //End 767px

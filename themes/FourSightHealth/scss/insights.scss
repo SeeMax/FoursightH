@@ -75,7 +75,7 @@
 	}
 }
 
-.single-insight-preview {
+.single-insight {
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
@@ -127,7 +127,7 @@
 	color:$gray;
 }
 
-.insight-preview-content {
+.insight-content {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -257,11 +257,11 @@
 		}
 
 		.single-insight-preview {
-			padding-top:0;
+			// padding-top:0;
 
 			h5 {
-				margin-top:20px;
-				margin-bottom:5px;
+				// margin-top:0px;
+				margin-bottom:7px;
 			}
 		}
 
@@ -281,6 +281,7 @@
 
 		.insight-preview-sponsor-box {
 			position: relative;
+			top: -34px;
 			width:100%;
 			text-align: center;
 			border-left: 0px solid white;

@@ -49,5 +49,6 @@
 			</div>
 			<?php wp_footer(); ?>
 		</div><!-- WRAPPER -->
+		<?php get_template_part( 'partials/_module-popup' ); ?>
 	</body>
 </html>

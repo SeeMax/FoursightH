@@ -465,7 +465,7 @@ add_action('init', 'theme_scripts'); // Add Custom Scripts to wp_head
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_theme_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_testiominial');
+add_action('init', 'create_post_type_mailchimpForms');
 add_action('init', 'create_post_type_bio');
 add_action('init', 'create_post_type_authorbios');
 add_action('init', 'create_post_type_client');
@@ -542,24 +542,24 @@ function create_post_type_authorbios()
     );
 }
 
-// function create_post_type_testiominial()
-// {
-//   register_taxonomy_for_object_type('category', 'theme_template'); // Register Taxonomies for Category
-//   register_taxonomy_for_object_type('post_tag', 'theme_template');
-//     register_post_type( 'testimonial',
-//         array(
-//             'labels' => array(
-//                 'name' => ('Testimonials'),
-//                 'singular_name' => ('Testimonial')
-//             ),
-//         'public' => true,
-//         'has_archive' => true,
-//         'rewrite' => array('slug' => 'testimonial'),
-//         'supports' => array('title','editor'),
-//         'menu_icon'   => 'dashicons-media-text'
-//         )
-//     );
-// }
+function create_post_type_mailchimpForms()
+{
+  register_taxonomy_for_object_type('category', 'theme_template'); // Register Taxonomies for Category
+  register_taxonomy_for_object_type('post_tag', 'theme_template');
+    register_post_type( 'mailchimpforms',
+        array(
+            'labels' => array(
+                'name' => ('Mailchimp Forms'),
+                'singular_name' => ('Mailchimp Forms')
+            ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'mailchimpforms'),
+        'supports' => array('title','editor'),
+        'menu_icon'   => 'dashicons-media-text'
+        )
+    );
+}
 
 function create_post_type_bio()
 {
@@ -684,6 +684,16 @@ if (function_exists('acf_add_options_page')) {
         'capability'    => 'edit_posts',
         'redirect'    => false,
                 'icon_url' => 'dashicons-playlist-video',
+        'position' => 5
+    ));
+
+    acf_add_options_page(array(
+        'page_title'    => 'Sidebar Boxes',
+        'menu_title'    => 'Sidebar Boxes',
+        'menu_slug'    => 'sidebar_boxes',
+        'capability'    => 'edit_posts',
+        'redirect'    => false,
+                'icon_url' => 'dashicons-layout',
         'position' => 5
     ));
 }
@@ -851,4 +861,6 @@ function wpdocs_excerpt_more( $more ) {
     return ' ...';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+add_filter( 'sharing_services_email', '__return_true' );
 ?>

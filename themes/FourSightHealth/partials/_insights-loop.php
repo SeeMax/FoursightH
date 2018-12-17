@@ -4,7 +4,7 @@
     <div class="fullbar c-width-75">
       <!-- CUSTOM PAGINATION QUERY -->
       <?php while ( have_posts() ) : the_post(); ?>
-        <div class="single-insight-preview">
+        <div class="single-insight">
           <!-- IF THERE IS A SPONSOR SHOW THE SPONSOR TAB -->
           <?php if(get_field('post_sponsor')):?>
             <div class="insight-preview-sponsor-box">
@@ -41,7 +41,7 @@
               By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
             <?php endif;?>
           </div>
-          <div class="insight-preview-content c-width-66">
+          <div class="insight-content c-width-66">
             <hr />
             <p class="insight-excerpt">
               <?php the_excerpt();?>
