@@ -1,0 +1,312 @@
+@import "colors";
+
+.single-insight-page {
+
+	.content {
+
+	}
+
+	img {
+		width:auto;
+	}
+
+
+
+	.full-insight {
+
+		.single-insight {
+			padding-top:45px;
+		}
+
+		.insight-preview-sponsor-box {
+			top:auto;
+			bottom:100%;
+			width:100%;
+			text-align: right;
+			padding:9px;
+			border-left:0px solid white;
+		}
+
+		.insight-content {
+			width:100%;
+			padding-right:0px;
+
+			h1 {
+				margin: .67em 0 .4em 0;
+			}
+
+			h2 {
+				margin: .75em 0 .5em 0;
+			}
+
+			h3 {
+				margin: .83em 0 .6em 0;
+			}
+
+			h4 {
+				margin: 1.12em 0 .9em 0;
+			}
+
+			h5 {
+				margin: 1.5em 0 1.3em 0;
+			}
+
+			h6 {
+				margin: 1.67em 0 1.4em 0;
+			}
+
+			.insight-category-bar {
+				width:100%;
+				height:auto;
+				border-top:1px solid $lightGray;
+				border-bottom:1px solid $lightGray;
+				padding:10px;
+				text-align: center;
+				margin:35px 0px 1em 0px;
+
+				h5 {
+					display: inline-block;
+					margin:0px;
+				}
+
+				.category-divider {
+					color:$teal;
+				}
+			}
+
+			.sharedaddy {
+				position: absolute;
+				top:0;
+				right:0px;
+
+				ul {
+
+					li {
+						padding-left:0px;
+
+						&:before {
+							display: none;
+							border:1px solid $lightGreen;
+						}
+					}
+				}
+
+				.sd-social-icon .sd-content ul li[class*='share-'] a.sd-button {
+					box-shadow: -3px 3px 3px -1px rgba(0,0,0,0.05);
+					border-radius:0px;
+					transition:box-shadow .2s ease;
+					color:$teal !important;
+					padding:6px 6px 4px 6px;
+
+					&:before {
+						font-size:22px;
+					}
+
+					&:hover {
+						box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.25);
+						opacity:1 !important;
+					}
+				}
+
+				.sd-social-icon .sd-content ul li[class*='share-'].share-twitter a.sd-button {
+					color:$teal !important;
+				}
+
+				ul {
+
+					li {
+						margin-right:0px;
+						margin-left:5px;
+
+						a {
+							background: white !important;
+							color:$teal !important;
+						}
+					}
+				}
+
+				.share-end {
+					display: none;
+				}
+			}
+		}
+
+		.wp-post-image {
+			margin:1em 0px;
+		}
+
+		.floated-hero {
+			margin-bottom: 0;
+
+			img {
+				float:left;
+				margin: 5px 20px 20px 0;
+			}
+		}
+
+		.author-bios-section {
+			border-top:1px solid $lightGray;
+			margin-top:80px;
+		}
+
+		.author-bios-title {
+
+			h5 {
+				margin:12px 0 10px 0;
+				font-size:20px;
+			}
+		}
+
+		.single-author-bio {
+				width:100%;
+				display: flex;
+				flex-wrap:wrap;
+				align-items: flex-start;
+				padding:35px 0;
+				border-top:1px solid $lightGray;
+
+			.author-bio-image {
+
+				img {
+					width:100%;
+					height:auto;
+				}
+			}
+
+			.author-bio-content {
+				padding-left:30px;
+			}
+
+			h5 {
+				margin:0px;
+
+				span {
+					color:$darkGray;
+					border-left:1px solid $darkGray;
+					padding-left:6px;
+					margin-left:5px;
+				}
+			}
+
+			p {
+				font-size: 12px;
+			}
+		}
+
+		.dave-bio-footer {
+			display: flex;
+			position: relative;
+			flex-wrap:wrap;
+			align-items: flex-start;
+			top:-5px;
+			width:100%;
+			height:auto;
+			padding:30px 5% 10px 5%;
+			background: $lightGray;
+
+			img {
+				width:180px;
+				height:auto;
+				margin-right:20px;
+				margin-bottom:20px;
+			}
+
+			p {
+				flex:1;
+				text-align: left;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.full-article-download {
+		position: absolute;
+		top:0;
+		right:158px;
+		box-shadow: -3px 3px 3px -1px rgba(0,0,0,0.05);
+		transition:box-shadow .2s ease;
+		color:$teal !important;
+		padding:4px 12px 4px 12px;
+
+		&:hover {
+			box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.25);
+			opacity:1 !important;
+		}
+	}
+
+	.single-insight-legal-copy {
+		font-size:10px;
+		color:$medGray;
+	}
+}
+
+/* use a sprite file with darker transport icons */
+.mejs-container .mejs-controls {
+	top:20px !important;
+}
+
+/* use a sprite file with darker transport icons */
+.mejs-container, .mejs-container .mejs-controls {
+	background:$darkTeal !important;
+	height:50px !important;
+}
+
+/* change the color of the progress bar */
+.mejs-controls .mejs-time-rail .mejs-time-total {
+	background: #ccc !important;
+}
+
+/* change the color of the current time bar */
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	background: $green !important;
+}
+
+/* change the color of the file loading bar */
+.mejs-controls .mejs-time-rail .mejs-time-loaded {
+	background: white !important;
+}
+
+.podcast-button {
+	margin:20px auto 40px auto;
+}
+
+
+
+
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.single-insight {
+
+
+	}
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+	.single-insight-page {
+
+		.full-insight {
+
+			.insight-preview-sponsor-box {
+				border-top:1px solid $lightGreen;
+				text-align: center;
+			}
+
+			.single-author-bio {
+
+				.author-bio-content {
+					padding-left:0px;
+					padding-top:30px;
+				}
+
+				.author-bio-image {
+					width:80%;
+				}
+			}
+		}
+	}
+} //End 767px

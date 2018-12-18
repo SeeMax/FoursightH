@@ -19,7 +19,7 @@
             $firstCatLink = $normalCategory[0]->cat_link;
           ?>
           <?php if( $term ): ?>
-            <h5>
+            <h5 class="featured-category-term">
               <a href='<?php echo get_category_link($term);?>'>
                 <?php echo $term->name; ?>
               </a>
@@ -27,7 +27,7 @@
           <?php else: ?>
             <?php foreach( $normalCategory as $category ):?>
               <?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
-                <h5>
+                <h5 class="featured-category-term"
                   <a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
                 </h5>
               <?php endif;?>

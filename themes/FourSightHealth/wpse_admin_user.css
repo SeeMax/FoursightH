@@ -1,0 +1,8 @@
+[data-name="custom_authors"],[data-name="hide_daves_bio"] {
+  display: none;
+  width:0%;
+}
+
+[data-name="featured_image_text_wrap"] {
+  border-right:1px solid #EEEEEE;
+}

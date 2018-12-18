@@ -863,4 +863,26 @@ function wpdocs_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 
 add_filter( 'sharing_services_email', '__return_true' );
+
+
+remove_action("admin_color_scheme_picker", "admin_color_scheme_picker");
+
+function wpse_user_admin_script() {
+    wp_register_style( 'wpse_admin_user_css', get_stylesheet_directory_uri() . '/wpse_admin_user.css' );
+    wp_enqueue_style( 'wpse_admin_user_css' );
+}
+add_action( 'admin_enqueue_scripts', 'wpse_user_admin_script' );
+
+// Hide 'included' and 'not included' custom meta fields
+// from the edit 'excursion' post type page.
+function my_exclude_custom_fields( $protected, $meta_key ) {
+
+    if ( in_array( $meta_key, array( 'Custom Authors', 'not included' ) ) ) {
+      return true;
+    }
+
+  return $protected;
+}
+add_filter( 'is_protected_meta', 'my_exclude_custom_fields', 10, 2 );
+
 ?>

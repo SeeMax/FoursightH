@@ -60,6 +60,10 @@
 	}
 }
 
+.featured-category-term {
+	margin-bottom:5px;
+}
+
 .insight-posts-section {
 
 	.content {
@@ -76,6 +80,7 @@
 }
 
 .single-insight {
+	width:100%;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
@@ -88,7 +93,6 @@
 	}
 
 	h2 {
-		margin-bottom:6px;
 
 		a {
 			color:$black;
@@ -125,6 +129,7 @@
 	width:100%;
 	font-size:14px;
 	color:$gray;
+	margin-top:6px;
 }
 
 .insight-content {
