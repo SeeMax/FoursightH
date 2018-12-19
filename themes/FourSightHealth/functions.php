@@ -471,6 +471,7 @@ add_action('init', 'create_post_type_authorbios');
 add_action('init', 'create_post_type_client');
 add_action('init', 'create_post_type_affiliations');
 add_action('init', 'create_post_type_advisors');
+add_action('init', 'create_post_type_books');
 add_action('init', 'create_post_type_news');
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
@@ -633,6 +634,25 @@ function create_post_type_advisors()
         'rewrite' => array('slug' => 'Advisors'),
         'supports' => array('title','editor'),
         'menu_icon'   => 'dashicons-shield'
+        )
+    );
+}
+
+function create_post_type_books()
+{
+  register_taxonomy_for_object_type('category', 'theme_template'); // Register Taxonomies for Category
+  register_taxonomy_for_object_type('post_tag', 'theme_template');
+    register_post_type( 'books',
+        array(
+            'labels' => array(
+                'name' => ('Books'),
+                'singular_name' => ('Book')
+            ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'Books'),
+        'supports' => array('title','editor'),
+        'menu_icon'   => 'dashicons-book'
         )
     );
 }
