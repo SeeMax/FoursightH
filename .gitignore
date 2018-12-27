@@ -7,5 +7,4 @@ plugins
 themes/FourSightHealth/node_modules
 themes/FourSightHealth/package-lock.json
 themes/FourSightHealth/package.json
-themes/FourSightHealth/gulpfile.js
 ai1wm-backups
