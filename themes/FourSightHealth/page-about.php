@@ -18,20 +18,9 @@
 				<?php get_template_part( 'partials/_custom-sidebar-two' ); ?>
 				<div class="fullbar c-width-75">
 
-					<section class="what-section">
+					<section class="first-section">
 						<div class="content">
-							<?php $whatGroup = get_field('what_we_do');
-							if( $whatGroup ): ?>
-								<h2><?php echo $whatGroup['headline']; ?></h2>
-									<?php echo $whatGroup['body']; ?>
-							<?php endif; ?>
-							<div class="trans-subset">
-								<?php $transGroup = get_field('transfrom');
-								if( $transGroup ): ?>
-									<h2><?php echo $transGroup['headline']; ?></h2>
-									<?php echo $transGroup['body']; ?>
-								<?php endif; ?>
-							</div>
+							<?php the_content();?>
 						</div>
 					</section>
 

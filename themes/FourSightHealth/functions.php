@@ -848,7 +848,7 @@ function remove_menus(){
 
   if ( is_user_logged_in() ) {
     $current_user = wp_get_current_user();
-    if (!in_array($current_user->ID, array(0))) {
+    if (!in_array($current_user->ID, array(1))) {
 
       remove_menu_page( 'index.php' );                  //Dashboard
       remove_menu_page( 'jetpack' );                    //Jetpack*
@@ -866,6 +866,12 @@ function remove_menus(){
 add_action( 'admin_menu', 'remove_menus', 9999);
 // Hide ACF
 // add_filter('acf/settings/show_admin', '__return_false');
+
+
+// HIDE JETPACK SHARING BUTTONS
+add_action( 'current_screen', function() {
+  add_filter( 'sharing_meta_box_show', '__return_false' );
+});
 
 add_filter('use_block_editor_for_post', '__return_false');
 

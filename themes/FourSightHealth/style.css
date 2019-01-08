@@ -430,14 +430,16 @@ hr {
     color: white;
     font-weight: 700; }
 
-.about-page .what-section {
+.about-page .first-section {
   border-top: 1px solid #D0EF68; }
-  .about-page .what-section .content {
-    padding-top: 36px;
+  .about-page .first-section .content {
+    padding-top: 6px;
     padding-bottom: 40px;
     padding-left: 0px;
     padding-right: 0px; }
-  .about-page .what-section .trans-subset {
+  .about-page .first-section p {
+    margin-top: .5em; }
+  .about-page .first-section h2 {
     margin-top: 30px; }
 
 .about-page .reach-section {
@@ -3201,6 +3203,124 @@ footer {
       padding-left: 0;
       padding-top: 10px; } }
 
+.services-page .main-section .content {
+  padding-bottom: 0px; }
+
+.services-page .hero-section {
+  background: #3E8B94;
+  color: white;
+  text-align: center; }
+  .services-page .hero-section .content {
+    max-width: 770px;
+    padding-top: 40px;
+    padding-bottom: 20px; }
+  .services-page .hero-section .background-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 30px;
+    z-index: 1;
+    opacity: 0.08; }
+    .services-page .hero-section .background-icon img {
+      height: 100%;
+      width: auto; }
+  .services-page .hero-section h1 {
+    color: white;
+    position: relative;
+    z-index: 2; }
+  .services-page .hero-section p {
+    position: relative;
+    z-index: 3; }
+  .services-page .hero-section a {
+    color: white;
+    font-weight: 700; }
+
+.services-page .first-section {
+  border-top: 1px solid #D0EF68; }
+  .services-page .first-section .content {
+    padding-top: 6px;
+    padding-bottom: 40px;
+    padding-left: 0px;
+    padding-right: 0px; }
+  .services-page .first-section p {
+    margin-top: .5em; }
+  .services-page .first-section h2 {
+    margin-top: 30px; }
+
+.services-page .reach-section {
+  text-align: center;
+  border-top: 1px solid #D0EF68;
+  border-bottom: 1px solid #D0EF68; }
+  .services-page .reach-section .content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    max-width: 500px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 0px;
+    padding-right: 0px; }
+
+.services-page .clients-section {
+  border-top: 1px solid #D0EF68; }
+  .services-page .clients-section .content {
+    padding: 36px 0px 40px 0px; }
+  .services-page .clients-section .clients-group {
+    width: 100%;
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+
+.services-page .single-client {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  background: #B3B3B3;
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  min-height: 140px;
+  width: 21%;
+  margin: 0px 2% 20px 2%; }
+  .services-page .single-client img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px; }
+  .services-page .single-client p {
+    margin: 0; }
+  .services-page .single-client .client-name {
+    font-size: 12px;
+    position: absolute;
+    bottom: 8px;
+    left: 0px;
+    width: 100%;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    color: #B3B3B3; }
+
+@media screen and (max-width: 1024px) {
+  .services-page .single-client {
+    width: 46%;
+    margin: 0px 2% 20px 2%; } }
 
 .custom-sidebar {
   position: relative;

@@ -2,4 +2,165 @@
 
 .services-page {
 
+	.main-section {
+
+		.content {
+			padding-bottom:0px;
+		}
+	}
+
+	.hero-section {
+		background:$teal;
+		color:white;
+		text-align: center;
+
+		.content {
+			max-width:770px;
+			padding-top:40px;
+			padding-bottom:20px;
+		}
+
+		.background-icon {
+			position: absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			text-align: center;
+			padding:30px;
+			z-index: 1;
+			opacity:0.08;
+
+			img {
+				height:100%;
+				width:auto;
+			}
+		}
+
+		h1 {
+			color:white;
+			position: relative;
+			z-index: 2;
+		}
+
+		p {
+			position: relative;
+			z-index: 3;
+		}
+
+		a {
+			color:white;
+			font-weight: 700;
+		}
+	}
+
+	.first-section {
+		border-top:1px solid $lightGreen;
+
+		.content {
+			padding-top:6px;
+			padding-bottom:40px;
+			padding-left:0px;
+			padding-right:0px;
+		}
+
+    p {
+      margin-top:.5em;
+    }
+
+		h2 {
+			margin-top:30px;
+		}
+	}
+
+	.reach-section {
+		text-align: center;
+		border-top:1px solid $lightGreen;
+		border-bottom:1px solid $lightGreen;
+
+		.content {
+			justify-content: center;
+			max-width:500px;
+			padding-top:50px;
+			padding-bottom:50px;
+			padding-left:0px;
+			padding-right:0px;
+		}
+	}
+
+
+
+	.clients-section {
+		border-top:1px solid $lightGreen;
+
+		.content {
+			padding:36px 0px 40px 0px;
+
+		}
+
+		.clients-group {
+			width:100%;
+			margin-top:30px;
+			display:flex;
+			flex-wrap:wrap;
+			justify-content: center;
+		}
+	}
+
+	.single-client {
+    position: relative;
+		display: flex;
+		flex-wrap:wrap;
+		justify-content: space-between;
+		align-items: center;
+    align-content:center;
+		background:$medGray;
+		text-align: center;
+		padding:20px 20px 20px 20px;
+    min-height:140px;
+    width:21%;
+    margin:0px 2% 20px 2%;
+
+		img {
+			width:100%;
+			height:auto;
+			margin-bottom:10px;
+		}
+
+		p {
+			margin:0;
+		}
+
+		.client-name {
+      font-size:12px;
+      position:absolute;
+      bottom:8px;
+      left:0px;
+			width:100%;
+			align-self: flex-end;
+      color:$medGray;
+		}
+	}
+
 }
+
+// 1024px And Below
+@media screen and (max-width: 1024px){
+
+	.services-page {
+
+    .single-client {
+      width:46%;
+      margin:0px 2% 20px 2%;
+    }
+  }
+}
+
+
+// 767px And Below
+@media screen and (max-width: 767px){
+
+	.services-page {
+
+  }
+}//End 767px
