@@ -11,8 +11,8 @@ var pump = require('pump');
 
 gulp.task('browserSync', function() {
   browserSync.init({
-    proxy: "localhost:8888/FourSight",
-    port: 3000,
+    proxy: "http://4sighthealth:8888/",
+    port: 5000,
     open: "internal"
   })
 })

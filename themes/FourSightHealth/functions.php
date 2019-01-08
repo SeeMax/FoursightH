@@ -688,6 +688,16 @@ if (function_exists('acf_add_options_page')) {
     ));
 
     acf_add_options_page(array(
+        'page_title'    => 'Company Information',
+        'menu_title'    => 'Company Information',
+        'menu_slug'    => 'company_information',
+        'capability'    => 'edit_posts',
+        'redirect'    => false,
+                'icon_url' => 'dashicons-media-spreadsheet',
+        'position' => 6
+    ));
+
+    acf_add_options_page(array(
         'page_title'    => 'Pre Header',
         'menu_title'    => 'Pre Header',
         'menu_slug'    => 'pre_header',
@@ -838,7 +848,7 @@ function remove_menus(){
 
   if ( is_user_logged_in() ) {
     $current_user = wp_get_current_user();
-    if (!in_array($current_user->ID, array(1))) {
+    if (!in_array($current_user->ID, array(0))) {
 
       remove_menu_page( 'index.php' );                  //Dashboard
       remove_menu_page( 'jetpack' );                    //Jetpack*
@@ -849,6 +859,7 @@ function remove_menus(){
       remove_menu_page( 'tools.php' );                  //Tools
       remove_menu_page( 'options-general.php' );        //Settings
       remove_menu_page( 'ajax-load-more' );             //Ajax Load More Plugin
+      remove_menu_page( 'global_options' );             //Ajax Load More Plugin
     }
   }
 }

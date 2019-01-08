@@ -1,219 +1,148 @@
 <?php /* Template Name: About */ get_header(); ?>
 	<main class="about-page" role="main">
-	<?php while ( have_posts() ) : the_post(); ?>			
-		<section class="hero-section heroTrigger">	
+	<?php while ( have_posts() ) : the_post(); ?>
+		<section class="hero-section">
 			<div class="content">
-				<?php get_template_part( 'partials/_clock-icon' ); ?>	
-				<h1><?php the_field('hero_header'); ?></h1>
-				<div class="hr-container"><hr></div>
-				<div class="hero-wheel heroWheel">
-					<?php $image = get_field('hero_wheel'); if( !empty($image) ): ?>
-						<img class="advisor-image" src="<?php echo $image; ?>" alt="<?php echo $image['alt']; ?>" />
-					<?php endif; ?>
+				<div class="background-icon">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/about-hero-icon.svg" >
 				</div>
-				<div class="hero-paragraphs">
-					<?php the_field('hero_content'); ?>
-				</div>
+				<?php $heroGroup = get_field('hero');
+				if( $heroGroup ): ?>
+					<h1><?php echo $heroGroup['headline']; ?></h1>
+					<?php echo $heroGroup['body']; ?>
+				<?php endif; ?>
 			</div>
 		</section>
-
-		<section class="what-we-do-section whatWeDoTrigger">	
+		<section class="main-section">
 			<div class="content">
-				<h2><?php the_field('what_we_do_header'); ?></h2>
-				<div class="hr-container"><hr></div>
-				<?php the_field('what_we_do_content'); ?>
-				<div class="things-we-do-group">
-					<?php if( have_rows('what_we_do_list') ): while( have_rows('what_we_do_list') ) : the_row();?>
-					  <div class="single-thing-we-do">
-					  	<!-- <div class="thing-icon">
-					  		<?php the_sub_field('item_icon'); ?>
-					  	</div> -->
-					  	<div class="thing-words">
-						  	<div class="thing-title">
-						  		<span><?php the_sub_field('item_title'); ?></span>
-						  	</div>
-						  	<div class="thing-description">
-									<?php the_sub_field('item_description'); ?>
-								</div>
-							</div>
-						</div>
-					<?php endwhile; endif;?>
-				</div>
-			</div>
-		</section>
+				<?php get_template_part( 'partials/_custom-sidebar-two' ); ?>
+				<div class="fullbar c-width-75">
 
-		<section class="clients-section clientTrigger">	
-			<div class="client-top clientTop">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1660 97.0999756" preserveAspectRatio="none">
-					<polygon class="section-topper-polygon" points="1660,0 1660,97.0999756 825.5479736,27.0999756 0,97.0999756 0,0 "/>
-				</svg>				
-			</div>
-			<div class="content">
-				<h2><?php the_field('clients_header'); ?></h2>
-				<div class="hr-container"><hr></div>
-		
-				<div class="client-carousel clientCarousel">
-					<?php $args = array( 'post_type' => 'clients', 'posts_per_page' => -1 );
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					  <div class="single-client">
-					  <a href="<?php the_field('link'); ?>" target="_blank">
-						  <?php $image = get_field('logo'); if( !empty($image) ): ?>
-								<img class="client-image" src="<?php echo $image; ?>" alt="<?php echo $image['alt']; ?>" />
+					<section class="what-section">
+						<div class="content">
+							<?php $whatGroup = get_field('what_we_do');
+							if( $whatGroup ): ?>
+								<h2><?php echo $whatGroup['headline']; ?></h2>
+									<?php echo $whatGroup['body']; ?>
 							<?php endif; ?>
-							<div class="hr-container"><hr></div>
-							<div class="client-title"> 
-								<?php the_title(); ?>
-							</div>
-							<div class="client-description"> 
-								<?php the_field('description'); ?>
-							</div>
-							</a>
-						</div>
-						<? wp_reset_postdata(); ?>
-					<?php endwhile;?>
-				</div>
-				<div class="client-dots clientDots"></div>
-			
-			</div>
-		</section>
-
-		<section class="affiliation-section affiliationTrigger">	
-			<div class="content">
-				<h2><?php the_field('professional_affiliations_header'); ?></h2>
-				<div class="hr-container"><hr></div>
-				<?php the_field('professional_affiliations_content'); ?>
-
-				<div class="affil-items-container">
-					<?php $args = array( 'post_type' => 'affiliations', 'posts_per_page' => -1 );
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					  <div class="single-affil-item">
-					  	<div class="affil-logo-container">
-								<svg viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
-								  <circle class="afill-circle-white afillCircleWhite" cx="90" cy="90" r="88"/>
-								  <circle class="afill-circle-teal afillCircleTeal" cx="90" cy="90" r="88"/>
-								</svg>
-					  		<?php $image = get_field('logo'); if( !empty($image) ): ?>
-									<img class="affil-logo affilLogo" src="<?php echo $image; ?>" alt="<?php echo $image['alt']; ?>" />
+							<div class="trans-subset">
+								<?php $transGroup = get_field('transfrom');
+								if( $transGroup ): ?>
+									<h2><?php echo $transGroup['headline']; ?></h2>
+									<?php echo $transGroup['body']; ?>
 								<?php endif; ?>
 							</div>
-							<div class="hr-container"><hr></div>
-							<div class="affil-title">
-								<?php the_title(); ?>
-							</div>
-							<div class="affil-position">
-								<?php the_field('position'); ?>
-							</div>
-							<a href="<?php the_field('link'); ?>" target="_blank"></a>
 						</div>
-						<? wp_reset_postdata(); ?>
-					<?php endwhile;?>
-				</div>	
-			</div>
-		</section>
+					</section>
 
-		<section class="advisor-section advisorTrigger">	
-			<div class="content">
-				<h2><?php the_field('advisor_header'); ?></h2>
-				<div class="hr-container"><hr></div>
-				<?php the_field('advisor_content'); ?>
-
-
-				<div class="advisor-carousel advisorCarousel">
-					<?php $args = array( 'post_type' => 'advisors', 'posts_per_page' => -1 );
-					$loop = new WP_Query( $args );
-					while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					  <div class="single-advisor">
-						  <a href="<?php the_field('link'); ?>" target="_blank"></a>
-						  <?php $image = get_field('logo'); if( !empty($image) ): ?>
-								<img class="advisor-image" src="<?php echo $image; ?>" alt="<?php echo $image['alt']; ?>" />
+					<section class="reach-section">
+						<div class="content">
+							<?php $reachGroup = get_field('reach_out');
+							if( $reachGroup ): ?>
+								<h3><?php echo $reachGroup['headline']; ?></h3>
+								<div class="button">
+									<a class="c-block-fill" href="<?php echo $reachGroup['button_text']; ?>"></a>
+									<?php echo $reachGroup['button_text']; ?>
+								</div>
 							<?php endif; ?>
 						</div>
-						<? wp_reset_postdata(); ?>
-					<?php endwhile;?>
-				</div>
-				<div class="advisor-dots advisorDots"></div>
-			</div>
-		</section>
+					</section>
 
-		<!-- <section class="rebel-section rebelTrigger">
-			<div class="rebel-top rebelTop">
-				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1660 97.0999756" preserveAspectRatio="none">
-					<polygon class="section-topper-polygon" points="1660,0 1660,97.0999756 825.5479736,27.0999756 0,97.0999756 0,0 "/>
-				</svg>				
-			</div>	
-			<div class="content">
-				<h2><?php the_field('rebel_with_a_cause_header'); ?></h2> -->
-				<!-- <div class="hr-container"><hr></div> -->
-<!-- 				<?php if( have_rows('rebel_with_a_cause_slides') ): while( have_rows('rebel_with_a_cause_slides') ) : the_row();?>
-					<div class="single-rebel-slide rebelSlide">
-						<div class="slide-content slideContent">
-							<?php the_sub_field('slide_content'); ?>
-						</div>
-						<div class="slide-callout slideCallout"<?php $image = get_sub_field('image'); if (!empty($image)): ?> style='background-image: url("<?php echo $image; ?>");'<?php endif;?>>
-							<div class="slide-callout-overlay"></div>
-							<div class="slide-callout-words">
-								<?php the_sub_field('slide_callout'); ?>
+					<section class="team-section">
+						<div class="content">
+							<?php $teamGroup = get_field('team');
+							if( $teamGroup ): ?>
+								<h2><?php echo $teamGroup['headline']; ?></h2>
+							<?php endif; ?>
+
+							<div class="bios-section">
+								<?php
+									$args = array(
+									'post_type' => 'bio',
+									'posts_per_page' => -1
+									);
+									$the_query = new WP_Query( $args );
+								?>
+								<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+									<div class="single-bio singleBio c-width-50">
+										<h3><?php the_title(); ?>, <span class="bio-title"><?php the_field('title'); ?></span></h3>
+										<a class="bio-email" href="<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
+										<div class="bio-image">
+											<?php $bioImage = get_field('image'); if( !empty($bioImage) ): ?>
+												<img class="c-width-33" src="<?php echo $bioImage; ?>">
+											<?php endif; ?>
+										</div>
+
+
+										<h4 class="bio-focus"><?php the_field('focus'); ?></h4>
+										<div class="bio-excerpt bioExcerpt">
+											<?php the_excerpt(); ?> <span class="read-more-link readMore">Read More</span>
+										</div>
+										<div class="bio-fullcerpt bioFullcerpt">
+											<?php the_content(); ?> <span class="read-less-link readLess">Read Less</span>
+										</div>
+									</div>
+								<?php endwhile; else: ?> <p>Sorry, there are no doctors to display.</p> <?php endif; ?>
+								<?php wp_reset_query(); ?>
+
 							</div>
 						</div>
+					</section>
+
+					<section class="industry-section">
+						<div class="content">
+							<?php if( have_rows('industry') ):
+								while( have_rows('industry') ): the_row();?>
+									<h2><?php the_sub_field('headline'); ?></h2>
+									<?php the_sub_field('body'); ?>
+									<div class="partners-group">
+										<?php if( have_rows('partners') ):
+											while( have_rows('partners') ): the_row();?>
+												<?php $image = get_sub_field('partner_image'); ?>
+												<div class="single-industry-partner c-width-30">
+													<img src="<?php echo $image['url'];?>">
+													<div class="partner-content">
+														<?php the_sub_field('partner_title'); ?>
+														<div class="partner-label">
+															<?php the_sub_field('partner_label'); ?>
+														</div>
+													</div>
+												</div>
+											<?php endwhile; ?>
+										<?php endif; ?>
+									</div>
+								<?php endwhile; ?>
+							<?php endif; ?>
+						</div>
+					</section>
+				</div>
+			</div>
+		</section>
+		<section class="book-highlight-section">
+			<div class="content">
+
+				<?php	$post_object = get_field('book_highlight');
+				if( $post_object ): $post = $post_object; setup_postdata( $post );?>
+					<?php $bookImage = get_field('book_image');?>
+					<div class="book-image c-width-25">
+						<img src="<?php echo $bookImage['url'];?>">
 					</div>
-				<?php endwhile; endif;?>
-			</div>
-		</section> -->
+					<div class="book-content c-width-75">
+					<h2><?php the_title();?></h2>
+					<div class="book-author">
+						<?php the_field('book_author');?>
+					</div>
+					<?php the_field('book_description');?>
+					<div class="button white-button">
+						<a class="c-block-fill" href="<?php the_field('book_button_destination');?>"></a>
+						<?php the_field('book_button_text');?>
+					</div>
 
-		<section class="testimonials-section testimonialsTrigger">	
-			<div class="content">
-				<h2><?php the_field('testimonials_header'); ?></h2>
-				<div class="hr-container"><hr></div>
+				<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+				<?php endif; ?>
 
-
-				<div class="about-testimonial-carousel aboutTestimonialCarousel">
-					<?php $args = array( 'post_type' => 'testimonial', 'posts_per_page' => -1 );
-						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post(); ?>
-						<div class="single-testimonial">
-					  	<!-- <?php the_title();?> -->
-					  	<img src="<?php echo get_template_directory_uri(); ?>/img/home/testimonial-quote.svg">
-					  	<div class="testimonial-content">
-					  		<?php the_field('testimonial_content'); ?>
-					  	</div>
-					  	<div class="testimonial-author">
-					  		<div class="author_credentials">
-									<div class="author_name">
-										<?php the_field('author_name'); ?>
-									</div>
-									<div class="author_title">
-										<?php the_field('author_title'); ?>
-										<span class="author_company"><?php the_field('author_company'); ?></span>
-									</div>
-								</div>
-								<div class="author_image"
-								<?php $image = get_field('author_image'); if (!empty($image)): ?>
-		              style='background-image: url("<?php echo $image; ?>");'
-		            <?php endif;?>
-		            >
-		            </div>
-								
-							</div>
-						</div>
-						<? wp_reset_postdata(); ?>
-					<?php endwhile;?>
-				</div>
-				<div class="testimonial-dots testimonialDots"></div>
 			</div>
 		</section>
-
-
-
-		
-				
-
 	<?php endwhile; ?><!-- END LOOP -->
 	</main>
 <?php get_footer(); ?>
-
-
-
-
-
