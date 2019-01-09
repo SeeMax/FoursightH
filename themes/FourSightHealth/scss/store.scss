@@ -1,10 +1,10 @@
 @import "colors";
 
-.store-page {	
-	
+.store-page {
+
 	/*Section Title*/
 	.shop-products {
-		
+
 	}
 
 	.content {
@@ -21,26 +21,27 @@
 	}
 
 	.shop-hero {
-		background:$lightGray;
-		color:$green;
+		background:$teal;
+		color:white;
 
 		.content {
 			padding-top:40px;
 			padding-bottom:30px;
-		}	
+		}
 
 		h1 {
-			text-transform: uppercase;
+			color:white;
+			text-align: center;
 		}
 	}
 
 	.shop-products {
-		
+
 		.content {
 			padding-top:40px;
-		}	
+		}
 	}
-	
+
 	.products-group {
 		display: flex;
 		flex-wrap:wrap;
@@ -51,14 +52,14 @@
 		width:46%;
 		height:auto;
 		margin:40px 0;
-		
+
 		/*The Container For the Image and Title/Price*/
 		.woocommerce-LoopProduct-link {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-around;			
+			justify-content: space-around;
 			padding:30px 0 50px 0;
-			background: $lightGray;
+			border:1px solid $lightGray;
 
 			img {
 				width:40%;
@@ -85,7 +86,7 @@
 				width:50px;
 				border: 0;
 			  height: 1px;
-			  background:$green;
+			  background:$teal;
 			  margin:0;
 			  padding:0;
 			}
@@ -106,12 +107,13 @@
 		}
 
 		.button-area {
-			background: $darkTeal;
+			background: $lightGray;
+			text-align: center;
 
 			.woocommerce-LoopProduct-link {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;			
+			justify-content: space-between;
 			padding:0;
 			}
 		}
@@ -149,7 +151,7 @@
 			width:100%;
 
 			.woocommerce-LoopProduct-link {
-			
+
 				img {
 					width:80%;
 				}
