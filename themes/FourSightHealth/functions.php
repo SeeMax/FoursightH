@@ -645,8 +645,8 @@ function create_post_type_books()
     register_post_type( 'books',
         array(
             'labels' => array(
-                'name' => ('Books'),
-                'singular_name' => ('Book')
+                'name' => ('Book Features'),
+                'singular_name' => ('Book Feature')
             ),
         'public' => true,
         'has_archive' => true,
@@ -860,6 +860,10 @@ function remove_menus(){
       remove_menu_page( 'options-general.php' );        //Settings
       remove_menu_page( 'ajax-load-more' );             //Ajax Load More Plugin
       remove_menu_page( 'global_options' );             //Ajax Load More Plugin
+      remove_menu_page( 'ai1wm_export' );             //Ajax Load More Plugin
+      remove_menu_page( 'edit.php?post_type=clients' );             //Ajax Load More Plugin
+      remove_menu_page( 'edit.php?post_type=affiliations' );             //Ajax Load More Plugin
+      remove_menu_page( 'edit.php?post_type=advisors' );             //Ajax Load More Plugin
     }
   }
 }

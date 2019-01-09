@@ -1769,11 +1769,8 @@ footer {
       color: #3E8B94; }
     .header nav .cart-digit {
       position: absolute;
-      top: -24px;
-      left: -1px;
-      width: 20px;
-      height: 20px;
-      z-index: -1;
+      top: -4px;
+      left: -12px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1783,16 +1780,15 @@ footer {
           -ms-flex-pack: center;
               justify-content: center;
       text-align: center;
-      font-size: 12px;
-      line-height: 18px;
+      font-size: 16px;
       font-weight: 800;
-      border-radius: 50%;
-      border: 2px solid #3E8B94;
-      color: #3E8B94; }
-    .header nav a {
+      color: #3E8B94;
+      z-index: -1; }
+    .header nav li i {
+      font-size: 20px; }
+    .header nav li a {
       position: relative;
-      text-transform: uppercase;
-      color: black; }
+      text-transform: uppercase; }
 
 @media screen and (max-width: 1024px) {
   .header .pre-header {

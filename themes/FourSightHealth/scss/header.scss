@@ -90,31 +90,30 @@
 
 		.cart-digit {
 			position: absolute;
-			top:-24px;
-			left:-1px;
-			width:20px;
-			height:20px;
-			z-index: -1;
-
+			top:-4px;
+			left:-12px;
 			display: flex;
 			align-content: center;
 			justify-content: center;
-
 			text-align:center;
-			font-size:12px;
-			line-height: 18px;
+			font-size:16px;
 			font-weight:800;
 
-			border-radius:50%;
-			border:2px solid $teal;
 			color:$teal;
+			z-index:-1;
 		}
 
-		a {
-			position: relative;
-			text-transform: uppercase;
-	  	color:black;
-	  }
+		li {
+			i {
+				font-size:20px;
+			}
+
+			a {
+				position: relative;
+				text-transform: uppercase;
+		  }
+		}
+
 	}
 }
 
