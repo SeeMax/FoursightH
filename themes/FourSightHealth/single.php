@@ -6,12 +6,12 @@
 				<?php get_template_part( 'partials/_custom-sidebar' ); ?>
 				<div class="fullbar c-width-75">
 					<div class="single-insight">
-						<?php if ( get_field('pdf_link')) :?>
-							<a class="full-article-download" href="<?php the_field('pdf_link');?>" target="_blank">
+						<?php $pdfID = get_field('pdf_link');?>
+						<?php if ($pdfID) :	$url = wp_get_attachment_url( $pdfID );?>
+							<a class="full-article-download" href="<?php echo $url;?>" target="_blank">
 								<i class="fas fa-arrow-to-bottom"></i>
 							</a>
 						<?php endif; ?>
-
 					<?php if(get_field('post_sponsor')):?>
             <div class="insight-preview-sponsor-box">
               Sponsored by <?php the_field('post_sponsor');?>

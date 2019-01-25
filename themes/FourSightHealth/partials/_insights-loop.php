@@ -27,7 +27,7 @@
           <?php else: ?>
             <?php foreach( $normalCategory as $category ):?>
               <?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
-                <h5 class="featured-category-term"
+                <h5 class="featured-category-term">
                   <a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
                 </h5>
               <?php endif;?>
@@ -63,8 +63,9 @@
                     <a class="c-block-fill" href="<?php the_permalink();?>"></a>
                   </div>
                   <div class="pdf-link">
-                    <?php if ( get_field('pdf_link')) :?>
-                      <a href="<?php the_field('pdf_link');?>" target="_blank">
+                    <?php $pdfID = get_field('pdf_link');?>
+                    <?php if ($pdfID) :	$url = wp_get_attachment_url( $pdfID );?>
+                      <a href="<?php echo $url;?>" target="_blank">
                         Download <i class="far fa-arrow-to-bottom"></i>
                       </a>
                     <?php endif; ?>

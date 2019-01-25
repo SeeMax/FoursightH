@@ -4,9 +4,9 @@
 		<div class="content">
 			<h1>Oops...sorry about the gremlins.</h1>
 			<div class="hr-container"><hr></div>
-			<h2>
-				Please check the <a href="/insights">blog page</a> for links to all our content.
-			</h2>
+			<h4>
+				Check the <a href="/insights">Insights</a> for links to all of our content.
+			</h4>
 		</div>
 	</section>
 </main>
