@@ -23,7 +23,7 @@
   });
 
 $('body').on('click', 'a', function (e) {
-  if (/#/.test(this.href) && $(this).attr('href') != '#tab-description' && $(this).attr('href') != '#tab-additional_information' && $(this).attr('href') != '#') {
+  if (/#/.test(this.href) && $(this).attr('href') != '#tab-description' && $(this).attr('href') != '#tab-additional_information' && $(this).attr('href') != '#' && $(this).attr('href') != '#search') {
     var thisOneLink = ($(this).attr("href"));
     var mailCard2 = $("*[data-form="+ thisOneLink +"]");
 

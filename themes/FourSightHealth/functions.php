@@ -569,8 +569,8 @@ function create_post_type_bio()
     register_post_type( 'bio',
         array(
             'labels' => array(
-                'name' => ('Bios'),
-                'singular_name' => ('Bio')
+                'name' => ('Company Bios'),
+                'singular_name' => ('Company Bio')
             ),
         'public' => true,
         'has_archive' => true,
@@ -925,5 +925,27 @@ function my_exclude_custom_fields( $protected, $meta_key ) {
   return $protected;
 }
 add_filter( 'is_protected_meta', 'my_exclude_custom_fields', 10, 2 );
+
+
+function customize_post_admin_menu_labels() {
+ global $menu;
+ global $submenu;
+ $menu[5][0] = 'Insights';
+ $submenu['edit.php'][5][0] = 'Insights';
+ $submenu['edit.php'][10][0] = 'Add Insight';
+ echo '';
+ }
+ add_action( 'admin_menu', 'customize_post_admin_menu_labels' );
+
+ function customize_users_admin_menu_labels() {
+  global $menu;
+  global $submenu;
+  $menu[70][0] = 'Authors / Users';
+  $submenu['users.php'][5][0] = 'Authors / Users';
+  $submenu['users.php'][10][0] = 'Add Author / User';
+  echo '';
+  }
+  add_action( 'admin_menu', 'customize_users_admin_menu_labels' );
+
 
 ?>
