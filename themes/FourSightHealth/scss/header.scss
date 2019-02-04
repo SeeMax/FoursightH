@@ -226,6 +226,36 @@
 				border-bottom:0px solid white;
 			}
 		}
+
+		.search {
+			text-align: left;
+			position:absolute;
+			top:-100%;
+			left:0;
+			right:0;
+			width:100%;
+			height:auto;
+			background:white;
+			border-top: 1px solid $lightGray;
+			padding:30px 25px;
+			max-width: 1118px;
+			margin:0px auto;
+			z-index:-1;
+			box-shadow: 0px 3px 4px -2px rgba(0,0,0,0.45);
+
+			.search-input{
+				width:100%;
+				border: 1px solid $lightGray;
+			}
+
+			.button {
+				margin:20px 0 0 0;
+			}
+
+			input {
+				padding:5px;
+			}
+		}
 	}
 }
 

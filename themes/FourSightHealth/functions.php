@@ -947,5 +947,21 @@ function customize_post_admin_menu_labels() {
   }
   add_action( 'admin_menu', 'customize_users_admin_menu_labels' );
 
+add_filter('acf/load_field/name=user_groups', 'populateUserGroups');
+
+function populateUserGroups( $field )
+{
+	// reset choices
+	$field['choices'] = array();
+
+	$users = get_users();
+
+	foreach ($users as $user) {
+		$field['choices'][ $user->ID ] = $user->display_name;
+	}
+
+	return $field;
+}
+
 
 ?>

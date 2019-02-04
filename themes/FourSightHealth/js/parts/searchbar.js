@@ -13,15 +13,16 @@
 
     if ($this.hasClass('openSearch')) {
       $this.removeClass('openSearch');
+      tl.set(searchToggle, {zIndex:-1});
       tl.to(searchContainer, 0.1, {rotation:0, transformOrigin:'50% 50%'}, 'closeSearch');
       tl.to($this, 0.1, {color:'#585858'}, 'closeSearch');
-      tl.to(searchToggle, 0.3, {top:'-100%', zIndex:-1});
+      tl.to(searchToggle, 0.3, {top:'-100%'});
     } else {
       $this.addClass('openSearch');
       tl.to(searchContainer, 0.1, {rotation:90, transformOrigin:'50% 50%'}, 'openSearch');
       tl.to($this, 0.1, {color:'#3E8B94'}, 'openSearch');
       tl.to(searchToggle, 0.3, {top:'100%'});
-      tl.set(searchToggle, 0.3, {top:'100%'});
+      tl.set(searchToggle, {zIndex:100, immediateRender:false});
 
     }
 

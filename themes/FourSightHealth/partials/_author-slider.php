@@ -7,11 +7,10 @@
     <div class="single-featured-slide-content c-width-70">
       <h5>Featured Author</h5>
       <h2><?php the_field('author_bio_name');?></h2>
-
-        <?php the_field('author_bio_description');?>
-
+      <?php the_field('author_bio_description');?>
       <div class="button">
-        <a class="c-block-fill" href="<?php the_permalink();?>"></a>
+        <?php $linkedAuthor = get_field('author_account_association');?>
+        <a class="c-block-fill" href="/author/<?php echo $linkedAuthor['user_nicename'];?>"></a>
         Read Now
       </div>
     </div>
