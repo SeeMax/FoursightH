@@ -100,7 +100,7 @@
 
 								<div class="insight-preview-image c-width-33">
 									<a class="c-block-fill" href='<?php echo the_permalink();?>'></a>
-									<?php if ( get_the_post_thumbnail($post_id) != '' ) {
+									<?php if ( get_the_post_thumbnail() != '' ) {
 										the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
 									} else {
 										echo '<img src="';
