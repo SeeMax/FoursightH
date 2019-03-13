@@ -13,7 +13,7 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.0.0
+ * @version     3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				 */
 				do_action( 'woocommerce_before_single_product_summary' );
 			?>
-			
+
 				<div class="summary entry-summary">
 
 					<?php
@@ -68,7 +68,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					?>
 
 				</div><!-- .summary -->
-			
+
 			<?php
 					/**
 					 * woocommerce_after_single_product_summary hook.

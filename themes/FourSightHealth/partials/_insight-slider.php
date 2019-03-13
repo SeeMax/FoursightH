@@ -11,7 +11,7 @@
       }	;?>
     </div>
     <div class="single-featured-slide-content c-width-60">
-      <h5>Featured Article</h5>
+      <h5>Featured Insight</h5>
       <h2><?php the_title();?></h2>
       <h6 class="preview-author-date">
         By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>

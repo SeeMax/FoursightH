@@ -11,6 +11,10 @@
       <?php get_template_part('partials/_insight-slider');?>
     <?php endif; ?>
 
+    <?php if ($value == 'General'):?>
+      <?php get_template_part('partials/_general-slider');?>
+    <?php endif; ?>
+
     <?php if ($value == 'Author'):?>
       <?php get_template_part('partials/_author-slider');?>
     <?php endif; ?>

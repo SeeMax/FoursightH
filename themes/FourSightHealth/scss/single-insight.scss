@@ -7,7 +7,7 @@
 	}
 
 	img {
-		
+
 	}
 
 
@@ -250,6 +250,10 @@
 .mejs-container, .mejs-container .mejs-controls {
 	background:$darkTeal !important;
 	height:50px !important;
+}
+
+.mejs-container {
+	margin-bottom:40px !important;
 }
 
 /* change the color of the progress bar */

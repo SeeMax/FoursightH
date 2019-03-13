@@ -3492,6 +3492,9 @@ footer {
   background: #303C42 !important;
   height: 50px !important; }
 
+.mejs-container {
+  margin-bottom: 40px !important; }
+
 /* change the color of the progress bar */
 .mejs-controls .mejs-time-rail .mejs-time-total {
   background: #ccc !important; }

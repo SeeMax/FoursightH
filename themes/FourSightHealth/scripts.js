@@ -39,7 +39,7 @@ $(function featureSlider() {
 			  arrows: true,
 				prevArrow: $('.featuredPrevArrow'),
 				nextArrow: $('.featuredNextArrow'),
-			  autoplaySpeed: 3000,
+			  autoplaySpeed: 6000,
 			  pauseOnHover:true,
 			  cssEase: 'linear',
 			  appendDots:$('.featuredDots')
@@ -52,7 +52,7 @@ $(function featureSlider() {
 			  infinite: true,
 			  dots: false,
 			  arrows: false,
-			  autoplaySpeed: 3000,
+			  autoplaySpeed: 6000,
 			  pauseOnHover:true,
 			  cssEase: 'linear',
 			});
@@ -69,7 +69,7 @@ $(function featureSlider() {
     var headerHeight = $('.header').height();
 
     tl.set($('main'), {paddingTop:headerHeight});
-    tl.set($('.single-product-page'), {paddingTop:headerHeight});
+    tl.set($('.single-product'), {paddingTop:headerHeight});
   }
 
   // Set Up The Main Section Padding on Load

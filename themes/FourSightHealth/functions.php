@@ -472,6 +472,7 @@ add_action('init', 'create_post_type_client');
 add_action('init', 'create_post_type_affiliations');
 add_action('init', 'create_post_type_advisors');
 add_action('init', 'create_post_type_books');
+add_action('init', 'create_post_type_generalfeature');
 // add_action('init', 'create_post_type_news');
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
@@ -535,7 +536,7 @@ function create_post_type_authorbios()
             ),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'Author Bios'),
+        'rewrite' => array('slug' => 'author_bios'),
         'supports' => array('title','editor'),
         'menu_icon' => 'dashicons-editor-quote',
         'menu_position' => 4
@@ -650,9 +651,28 @@ function create_post_type_books()
             ),
         'public' => true,
         'has_archive' => true,
-        'rewrite' => array('slug' => 'Books'),
+        'rewrite' => array('slug' => 'books'),
         'supports' => array('title','editor'),
         'menu_icon'   => 'dashicons-book'
+        )
+    );
+}
+
+function create_post_type_generalfeature()
+{
+  register_taxonomy_for_object_type('category', 'theme_template'); // Register Taxonomies for Category
+  register_taxonomy_for_object_type('post_tag', 'theme_template');
+    register_post_type( 'generalfeature',
+        array(
+            'labels' => array(
+                'name' => ('General Carousel Features'),
+                'singular_name' => ('General Feature')
+            ),
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'general_feature'),
+        'supports' => array('title','editor'),
+        'menu_icon'   => 'dashicons-welcome-view-site'
         )
     );
 }

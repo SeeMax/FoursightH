@@ -13,7 +13,7 @@ $(function featureSlider() {
 			  arrows: true,
 				prevArrow: $('.featuredPrevArrow'),
 				nextArrow: $('.featuredNextArrow'),
-			  autoplaySpeed: 3000,
+			  autoplaySpeed: 6000,
 			  pauseOnHover:true,
 			  cssEase: 'linear',
 			  appendDots:$('.featuredDots')
@@ -26,7 +26,7 @@ $(function featureSlider() {
 			  infinite: true,
 			  dots: false,
 			  arrows: false,
-			  autoplaySpeed: 3000,
+			  autoplaySpeed: 6000,
 			  pauseOnHover:true,
 			  cssEase: 'linear',
 			});

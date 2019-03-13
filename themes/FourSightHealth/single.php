@@ -122,26 +122,30 @@
 								<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 							</div>
 						<?php else:?>
-						<!-- Check If Dave Bio Is Selected for Older Posts -->
+						<!-- Show Dave Bio if not a podcast -->
+							<?php if( has_category( $category = 'podcasts')):?>
 
-							<div class="author-bios-section">
-								<div class="author-bios-title">
-									<h5>About The Authors</h5>
+
+							<?php else:?>
+								<div class="author-bios-section">
+									<div class="author-bios-title">
+										<h5>About The Authors</h5>
+									</div>
+						      <div class="single-author-bio">
+						        <div class="author-bio-image c-width-20">
+											<img src="<?php the_field('daves_image', 'options');?>" alt="David W. Johnson">
+										</div>
+										<div class="author-bio-content c-width-80">
+											<h5>
+												David Johnson
+												<span class="author-bio-title">CEO 4sightHealth</span>
+											</h5>
+						        	<p><?php the_field('daves_bio', 'options');?></p>
+										</div>
+						      </div>
 								</div>
-					      <div class="single-author-bio">
-					        <div class="author-bio-image c-width-20">
-										<img src="<?php the_field('daves_image', 'options');?>" alt="David W. Johnson">
-									</div>
-									<div class="author-bio-content c-width-80">
-										<h5>
-											David Johnson
-											<span class="author-bio-title">CEO 4sightHealth</span>
-										</h5>
-					        	<p><?php the_field('daves_bio', 'options');?></p>
-									</div>
-					      </div>
-							</div>
-				   
+							<?php endif;?>
+
 					  <?php endif; ?>
 						<!-- Check if there is legal copy for the post -->
 						<?php if (get_field('post_legal_copy')): ?>
