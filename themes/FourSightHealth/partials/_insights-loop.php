@@ -74,10 +74,10 @@
               </div>
             </div>
           </div>
-
+          <?php $post_id = get_the_ID();?>
           <div class="insight-preview-image c-width-33">
             <a class="c-block-fill" href='<?php echo the_permalink();?>'></a>
-            <?php if ( get_the_post_thumbnail() != '' ) {
+            <?php if ( get_the_post_thumbnail($post_id) != '' ) {
               the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
             } else {
               echo '<img src="';

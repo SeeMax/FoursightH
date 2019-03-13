@@ -46,13 +46,25 @@
 		            $term = get_field('preview_featured_category');
 		            $normalCategory = get_the_category();
 		          ?>
-							<?php foreach( $normalCategory as $category ):?>
-	            	<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized' && $category->name !==$term->name):?>
-              		<h5>
-                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
-              		</h5>
-	            	<?php endif;?>
-							<?php endforeach;?>
+							<!-- IF THERE IS A HIGHLIGHTED TERM -->
+							<?php if($term):?>
+								<?php foreach( $normalCategory as $category ):?>
+		            	<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized' && $category->name !==$term->name):?>
+	              		<h5>
+	                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
+	              		</h5>
+		            	<?php endif;?>
+								<?php endforeach;?>
+							<!-- IF THERE IS NOT A HIGHLIGHTED TERM -->
+							<?php else:?>
+								<?php foreach( $normalCategory as $category ):?>
+		            	<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
+	              		<h5>
+	                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
+	              		</h5>
+		            	<?php endif;?>
+								<?php endforeach;?>
+							<?php endif;?>
 						</div>
 						<!-- Get The Posts Date -->
 						<?php $thisPostDate = get_the_date('ynd');?>
@@ -94,7 +106,7 @@
 							      <div class="single-author-bio">
 											<?php $bioImage = get_field('author_bio_image');?>
 											<div class="author-bio-image c-width-20">
-												<img src="<?php echo $bioImage[url];?>">
+												<img src="<?php echo $bioImage['url'];?>">
 											</div>
 											<div class="author-bio-content c-width-80">
 												<h5>
@@ -109,33 +121,27 @@
 							  <?php endforeach; ?>
 								<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 							</div>
-						<?php endif;?>
+						<?php else:?>
 						<!-- Check If Dave Bio Is Selected for Older Posts -->
-						<?php if ( get_field('daves_bio', 'options')) :?>
 
-					    <?php $bioCheck = get_field('hide_daves_bio');?>
-					    <?php if( $bioCheck && in_array('hideBio', $bioCheck) ): ?>
-
-					    <?php else:?>
-								<div class="author-bios-section">
-									<div class="author-bios-title">
-										<h5>About The Authors</h5>
-									</div>
-						      <div class="single-author-bio">
-						        <div class="author-bio-image c-width-20">
-											<img src="<?php the_field('daves_image', 'options');?>" alt="David W. Johnson">
-										</div>
-										<div class="author-bio-content c-width-80">
-											<h5>
-												David Johnson
-												<span class="author-bio-title">CEO 4sightHealth</span>
-											</h5>
-						        	<p><?php the_field('daves_bio', 'options');?></p>
-										</div>
-						      </div>
+							<div class="author-bios-section">
+								<div class="author-bios-title">
+									<h5>About The Authors</h5>
 								</div>
-					    <?php endif; ?>
-
+					      <div class="single-author-bio">
+					        <div class="author-bio-image c-width-20">
+										<img src="<?php the_field('daves_image', 'options');?>" alt="David W. Johnson">
+									</div>
+									<div class="author-bio-content c-width-80">
+										<h5>
+											David Johnson
+											<span class="author-bio-title">CEO 4sightHealth</span>
+										</h5>
+					        	<p><?php the_field('daves_bio', 'options');?></p>
+									</div>
+					      </div>
+							</div>
+				   
 					  <?php endif; ?>
 						<!-- Check if there is legal copy for the post -->
 						<?php if (get_field('post_legal_copy')): ?>

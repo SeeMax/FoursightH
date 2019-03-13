@@ -65,7 +65,7 @@
   <?php if ( $the_query->have_posts() ) :
     while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
       <?php $authorBioImage = get_field('author_bio_image');?>
-      <img src="<?php $authorBioImage[url];?>">
+      <img src="<?php $authorBioImage['url'];?>">
       <?php the_field('author_bio_name');?>
       <?php the_field('author_bio_title');?>
       <?php the_field('author_bio_description');?>

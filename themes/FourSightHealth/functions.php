@@ -462,7 +462,7 @@ function html5blankcomments($comment, $args, $depth)
 // Add Actions
 add_action('init', 'theme_scripts'); // Add Custom Scripts to wp_head
 // add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
-add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
+// add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'theme_styles'); // Add Theme Stylesheet
 add_action('init', 'register_theme_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_mailchimpForms');
@@ -784,7 +784,9 @@ function catch_that_image() {
   ob_start();
   ob_end_clean();
   $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
-  $first_img = $matches[1][0];
+  if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches)){
+    $first_img = $matches[1][0];
+  }
 
   if(empty($first_img)) {
 
@@ -962,6 +964,54 @@ function populateUserGroups( $field )
 
 	return $field;
 }
+
+
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+	'key' => 'group_59fa184902661',
+	'title' => 'Post PDF',
+	'fields' => array(
+		array(
+			'key' => 'field_59fa185078b35',
+			'label' => 'PDF Link',
+			'name' => 'pdf_link',
+			'type' => 'file',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'return_format' => 'url',
+			'library' => 'all',
+			'min_size' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+));
+
+endif;
 
 
 ?>

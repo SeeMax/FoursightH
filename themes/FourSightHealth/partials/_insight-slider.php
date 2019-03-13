@@ -1,10 +1,10 @@
 <?php $post_object = get_sub_field('slider_featured_insight');
   if( $post_object ): $post = $post_object; setup_postdata( $post );?>
     <div class="single-featured-slide-image c-width-40">
-      <?php $thumb = get_the_post_thumbnail(get_the_ID());?>
-      <?php if (!empty($thumb)) {
-        echo the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
-      } else if ( has_post_thumbnail ) {
+      <?php $post_id = get_the_ID();?>
+      <?php if ( get_the_post_thumbnail($post_id) != '' ) {
+        the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
+      } else {
         echo '<img src="';
         echo catch_that_image();
         echo '" alt="Four Sight Health" />';

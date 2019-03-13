@@ -39,14 +39,15 @@
 									<h6 class="preview-author-date">
 										<?php the_author();?> <span>| <?php echo get_the_date('M j, Y'); ?></span>
 									</h6>
-									<?php $thumb = get_the_post_thumbnail(get_the_ID());?>
-									<?php if (!empty($thumb)) {
-										echo the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
-									} else if ( has_post_thumbnail ) {
-										echo '<img src="';
-										echo catch_that_image();
-										echo '" alt="Four Sight Health" />';
-									}	;?>
+
+									<?php $post_id = get_the_ID();?>
+			            <?php if ( get_the_post_thumbnail($post_id) != '' ) {
+			              the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
+			            } else {
+			              echo '<img src="';
+			              echo catch_that_image();
+			              echo '" alt="" />';
+			            }	;?>
 								</div>
 						  <?php endforeach; ?>
 						  <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
@@ -73,7 +74,7 @@
 					while( have_rows('ask_dave_section') ): the_row();?>
 						<?php $thisImage = get_sub_field('image');?>
 						<div class="ask-image c-width-20">
-							<img src="<?php echo $thisImage[url];?>">
+							<img src="<?php echo $thisImage['url'];?>">
 						</div>
 						<div class="ask-content c-width-80">
 							<h2><?php the_sub_field('headline');?></h2>

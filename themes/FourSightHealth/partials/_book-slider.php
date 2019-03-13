@@ -2,7 +2,7 @@
   if( $post_object ): $post = $post_object; setup_postdata( $post );?>
   <div class="single-featured-slide-image c-width-40">
     <?php $image = get_field('book_image');?>
-    <img src="<?php echo $image[url];?>">
+    <img src="<?php echo $image['url'];?>">
   </div>
   <div class="single-featured-slide-content c-width-60">
     <h5>Featured Book</h5>

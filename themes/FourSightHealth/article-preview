@@ -12,7 +12,7 @@
 			
 				echo the_post_thumbnail('large', ['class' => 'post-image', 'title' => 'Feature image']);
 			
-		} else if ( has_post_thumbnail ) {
+		} else if ( has_post_thumbnail()) {
 			echo '<img src="';
 			echo catch_that_image();
 			echo '" alt="Four Sight Health" />';
