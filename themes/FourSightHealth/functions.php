@@ -59,7 +59,7 @@ if (function_exists('add_image_size')){
   add_image_size('large', 1024, '', true); // Large Thumbnail
   add_image_size('medium', 250, '', true); // Medium Thumbnail
   add_image_size('small', 120, '', true); // Small Thumbnail
-  add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
+  // add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
 }
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
@@ -899,7 +899,7 @@ add_action( 'current_screen', function() {
   add_filter( 'sharing_meta_box_show', '__return_false' );
 });
 
-add_filter('use_block_editor_for_post', '__return_false');
+// add_filter('use_block_editor_for_post', '__return_false');
 
 //Exclude pages from WordPress Search
 if (!is_admin()) {
