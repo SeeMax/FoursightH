@@ -30,7 +30,7 @@
 								if( $reachGroup ): ?>
 									<h3><?php echo $reachGroup['headline']; ?></h3>
 									<div class="button">
-										<a class="c-block-fill" href="<?php echo $reachGroup['button_text']; ?>"></a>
+										<a class="c-block-fill" href="mailto:<?php echo $reachGroup['button_text']; ?>"></a>
 										<?php echo $reachGroup['button_text']; ?>
 									</div>
 								<?php endif; ?>
