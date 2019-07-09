@@ -11,6 +11,7 @@ var pump = require('pump');
 
 gulp.task('browserSync', function() {
   browserSync.init({
+    notify:false,
     proxy: "http://4sighthealth:8888/",
     port: 5000,
     open: "internal"
@@ -22,6 +23,9 @@ gulp.task('sass', function(cb) {
     .pipe(sass())
     .pipe(concat('style.css'))
     .pipe(gulp.dest(''))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
     cb(err);
 });
 
@@ -29,12 +33,10 @@ gulp.task('sass', function(cb) {
 gulp.task('css', ['sass'], function() {
   return gulp.src('style.css')
     .pipe(autoprefixer({
-      browsers: ['last 2 versions']
+      grid: true,
+      browsers: ['>1%']
     }))
     .pipe(gulp.dest(''))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
 });
 
 
@@ -77,7 +79,6 @@ gulp.task('watch', ['browserSync', 'sass', 'css', 'concat'], function (){
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('style.css', ['css']);
   gulp.watch('*.php', browserSync.reload);
-  gulp.watch('woocommerce/*', browserSync.reload);
   gulp.watch('partials/*.php', browserSync.reload);
   gulp.watch('js/parts/*.js', ['concat']);
   gulp.watch('scripts.js', ['lint']);

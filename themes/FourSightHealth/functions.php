@@ -1034,4 +1034,45 @@ acf_add_local_field_group(array(
 endif;
 
 
+
+/**
+ * Hide shipping rates when free shipping is available.
+ * Updated to support WooCommerce 2.6 Shipping Zones.
+ *
+ * @param array $rates Array of rates found for the package.
+ * @return array
+ */
+function metorik_hide_shipping_when_free_is_available( $rates ) {
+	$free = array();
+	foreach ( $rates as $rate_id => $rate ) {
+		if ( 'free_shipping' === $rate->method_id ) {
+			$free[ $rate_id ] = $rate;
+			break;
+		}
+	}
+	return ! empty( $free ) ? $free : $rates;
+}
+add_filter( 'woocommerce_package_rates', 'metorik_hide_shipping_when_free_is_available', 100 );
+
+// 
+// /**
+//  * Hide free shipping when another method is available.
+//  * Updated to support WooCommerce 2.6 Shipping Zones.
+//  * Code modified by First Class Code, based on code provided by WooCommerce tutorial.
+//  *
+//  * @param array $rates Array of rates found for the package.
+//  * @return array
+//  */
+// function hide_free_when_method_available( $rates ) {
+// 	$distance = array();
+// 	foreach ( $rates as $rate_id => $rate ) {
+// 		if ( 'flat_rate' === $rate->method_id ) {
+// 			$distance[ $rate_id ] = $rate;
+// 			break;
+// 		}
+// 	}
+// 	return ! empty( $distance ) ? $distance: $rates;
+// }
+// add_filter( 'woocommerce_package_rates', 'hide_free_when_method_available', 100 );
+
 ?>

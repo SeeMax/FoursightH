@@ -6,3 +6,15 @@
 [data-name="featured_image_text_wrap"] {
   border-right:1px solid #EEEEEE;
 }
+
+[data-name="pdf_link"]:before {
+  content:"Do not upload new PDFs here. Only for removing old PDFs.";
+  display:inline-block;
+  text-align: center;
+  width:100%;
+  border:3px solid  red;
+  color:red;
+  font-size:14px;
+  font-weight: 800;
+  padding:10px 0px;
+}

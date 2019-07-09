@@ -7,10 +7,30 @@
 				<div class="fullbar c-width-75">
 					<div class="single-insight">
 						<?php $pdfID = get_field('pdf_link');?>
-						<?php if ($pdfID) :	$url = wp_get_attachment_url( $pdfID );?>
-							<a class="full-article-download" href="<?php echo $url;?>" target="_blank">
-								<i class="fas fa-arrow-to-bottom"></i>
-							</a>
+						<?php $pdfIDnew = get_field('pdf_link_new');?>
+
+						<?php if ($pdfID):?>
+							<?php $url = wp_get_attachment_url( $pdfID );?>
+							<?php if ($url):?>
+								<a class="full-article-download oldPDfURL" href="<?php echo $url;?>" target="_blank">
+									<i class="fas fa-arrow-to-bottom"></i>
+								</a>
+							<?php else: ?>
+								<a class="full-article-download oldPDFID" href="<?php echo $pdfID;?>" target="_blank">
+									<i class="fas fa-arrow-to-bottom"></i>
+								</a>
+							<?php endif; ?>
+						<?php elseif ($pdfIDnew):?>
+							<?php $urlnew = wp_get_attachment_url( $pdfIDnew );?>
+							<?php if ($urlnew):?>
+								<a class="full-article-download newPDFURL" href="<?php echo $urlnew;?>" target="_blank">
+									<i class="fas fa-arrow-to-bottom"></i>
+								</a>
+							<?php else: ?>
+								<a class="full-article-download newPDFID" href="<?php echo $pdfIDnew;?>" target="_blank">
+									<i class="fas fa-arrow-to-bottom"></i>
+								</a>
+							<?php endif; ?>
 						<?php endif; ?>
 					<?php if(get_field('post_sponsor')):?>
             <div class="insight-preview-sponsor-box">

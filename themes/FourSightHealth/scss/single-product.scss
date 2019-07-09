@@ -15,7 +15,7 @@
 		display: flex !important;
 		flex-wrap: wrap;
 		background: $lightGray;
-		justify-content: space-around;
+		justify-content: center;
 		padding: 50px 0 0 0 !important;
 	}
 
@@ -38,7 +38,8 @@
 	}
 
 	.images {
-		width:36% !important;
+		width:25% !important;
+		margin-right:3%;
 
 
 		img {
@@ -47,10 +48,10 @@
 	}
 
 	.summary {
-		width:54% !important;
+		width:64% !important;
 		text-align: left;
 		margin-bottom: 0px !important;
-		padding-top:30px !important;
+		padding-top:10px !important;
 
 		form {
 			display: flex !important;
@@ -175,7 +176,7 @@
 		.product {
 			width:46%;
 			height:auto;
-			margin:40px 0;
+			margin:40px 1%;
 
 			/*The Container For the Image and Title/Price*/
 			.woocommerce-LoopProduct-link {

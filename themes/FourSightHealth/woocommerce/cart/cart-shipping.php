@@ -28,6 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<ul id="shipping_method">
 				<?php foreach ( $available_methods as $method ) : ?>
 					<li>
+						Here
 						<?php
 							printf( '<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method" %4$s />
 								<label for="shipping_method_%1$d_%2$s">%5$s</label>',

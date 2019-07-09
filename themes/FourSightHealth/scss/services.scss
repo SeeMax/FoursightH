@@ -114,9 +114,9 @@
 		justify-content: space-between;
 		align-items: center;
     align-content:center;
-		background:$medGray;
+		border:1px solid $lightGray;
 		text-align: center;
-		padding:20px 20px 20px 20px;
+		padding:20px 20px 40px 20px;
     min-height:140px;
     width:21%;
     margin:0px 2% 20px 2%;
@@ -134,8 +134,9 @@
 		.client-name {
       font-size:12px;
       position:absolute;
-      bottom:8px;
+      bottom:12px;
       left:0px;
+			padding:0 20px;
 			width:100%;
 			align-self: flex-end;
       color:$medGray;
