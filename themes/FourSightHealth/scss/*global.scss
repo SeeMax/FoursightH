@@ -153,6 +153,12 @@ hr {
   padding:0;
 }
 
+blockquote {
+	border-left:1px solid $medGray;
+	margin: 1.5em 0px;
+	padding: .5em 1em;
+}
+
 .button, .woocommerce a.button, .woocommerce .cart input.button, #mc-embedded-subscribe.button {
 	-webkit-appearance:none !important;
 	font-family: 'Avenir', sans-serif;

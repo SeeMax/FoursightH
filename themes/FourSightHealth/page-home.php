@@ -95,7 +95,7 @@
 			<div class="content">
 				<div class="custom-sidebar c-width-25">
 					<div class="custom-sidebar-box twitter-sidebar">
-						<a class="twitter-timeline" data-height="500" data-link-color="#3E8B94" href="https://twitter.com/4SightHealth?ref_src=twsrc%5Etfw">Tweets by 4SightHealth</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+						<a class="twitter-timeline" data-height="500" data-link-color="#3E8B94" href="https://twitter.com/marketvmedicine?ref_src=twsrc%5Etfw">Tweets by 4SightHealth</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</div>
 				</div>
 				<div class="fullbar c-width-75">

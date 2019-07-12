@@ -289,6 +289,11 @@ hr {
   margin: 0;
   padding: 0; }
 
+blockquote {
+  border-left: 1px solid #B3B3B3;
+  margin: 1.5em 0px;
+  padding: .5em 1em; }
+
 .button, .woocommerce a.button, .woocommerce .cart input.button, #mc-embedded-subscribe.button {
   -webkit-appearance: none !important;
   font-family: 'Avenir', sans-serif;
@@ -1863,6 +1868,9 @@ footer {
     margin-bottom: 10px; }
   .home-page .single-featured-slide .preview-author-date {
     margin: 10px 0; }
+
+.home-page .slider-book-text p {
+  font-size: 14px; }
 
 .home-page .aspect-ratio {
   position: relative;

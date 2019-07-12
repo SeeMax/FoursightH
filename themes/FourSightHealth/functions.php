@@ -54,13 +54,11 @@ if (function_exists('add_theme_support'))
     load_theme_textdomain('html5blank', get_template_directory() . '/languages');
 }
 
-if (function_exists('add_image_size')){
 
-  add_image_size('large', 1024, '', true); // Large Thumbnail
-  add_image_size('medium', 250, '', true); // Medium Thumbnail
-  add_image_size('small', 120, '', true); // Small Thumbnail
-  // add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-}
+add_image_size('large', 1024, 1024, false); // Large Thumbnail
+add_image_size('medium', 250, 250, false); // Medium Thumbnail
+add_image_size('small', 150, 150, false); // Small Thumbnail
+
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
@@ -1054,7 +1052,7 @@ function metorik_hide_shipping_when_free_is_available( $rates ) {
 }
 add_filter( 'woocommerce_package_rates', 'metorik_hide_shipping_when_free_is_available', 100 );
 
-// 
+//
 // /**
 //  * Hide free shipping when another method is available.
 //  * Updated to support WooCommerce 2.6 Shipping Zones.

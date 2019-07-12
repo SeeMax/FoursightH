@@ -13,7 +13,7 @@ gulp.task('browserSync', function() {
   browserSync.init({
     notify:false,
     proxy: "http://4sighthealth:8888/",
-    port: 5000,
+    port: 5001,
     open: "internal"
   })
 })
