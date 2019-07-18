@@ -119,7 +119,7 @@
 						if( $post_objects ): ?>
 							<div class="author-bios-section">
 								<div class="author-bios-title">
-									<h5>About The Authors</h5>
+									<h5>About the 4sight Health Author</h5>
 								</div>
 								<?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
 							    <?php setup_postdata($post); ?>
@@ -149,7 +149,7 @@
 							<?php else:?>
 								<div class="author-bios-section">
 									<div class="author-bios-title">
-										<h5>About The Authors</h5>
+										<h5>About the 4sight Health Author</h5>
 									</div>
 						      <div class="single-author-bio">
 						        <div class="author-bio-image c-width-20">
