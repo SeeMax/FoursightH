@@ -809,9 +809,9 @@ function catch_that_image() {
   if(empty($first_img)) {
 
     if ( is_category() || is_tag() ) {
-        $first_img = "../../wp-content/themes/FourSightHealth/img/default-post-image.jpg";
+        $first_img = "../../../../wp-content/themes/FourSightHealth/img/default-post-image.jpg";
     } else {
-        $first_img = "../wp-content/themes/FourSightHealth/img/default-post-image.jpg";
+        $first_img = "../../../wp-content/themes/FourSightHealth/img/default-post-image.jpg";
     }
   }
   return $first_img;
