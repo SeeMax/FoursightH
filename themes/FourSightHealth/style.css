@@ -267,6 +267,8 @@ ol {
   counter-reset: li;
   padding-left: 0px; }
   ol li {
+    position: relative;
+    margin-left: 20px;
     counter-increment: li; }
     ol li:before {
       content: counter(li);
@@ -275,8 +277,9 @@ ol {
       text-align: right;
       direction: rtl;
       width: 1em;
-      margin-left: -8px;
-      margin-right: 6px; }
+      position: absolute;
+      left: -25px;
+      top: 0; }
 
 .hr-container {
   position: relative;
