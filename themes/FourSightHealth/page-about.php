@@ -30,7 +30,7 @@
 							if( $reachGroup ): ?>
 								<h3><?php echo $reachGroup['headline']; ?></h3>
 								<div class="button">
-									<a class="c-block-fill" href="<?php echo $reachGroup['button_text']; ?>"></a>
+									<a class="c-block-fill" href="mailto:<?php echo $reachGroup['button_text']; ?>"></a>
 									<?php echo $reachGroup['button_text']; ?>
 								</div>
 							<?php endif; ?>
@@ -55,7 +55,7 @@
 								<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 									<div class="single-bio singleBio c-width-50">
 										<h3><?php the_title(); ?>, <span class="bio-title"><?php the_field('title'); ?></span></h3>
-										<a class="bio-email" href="<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
+										<a class="bio-email" href="mailto:<?php the_field('email'); ?>"><?php the_field('email'); ?></a>
 										<div class="bio-image">
 											<?php $bioImage = get_field('image'); if( !empty($bioImage) ): ?>
 												<img class="c-width-33" src="<?php echo $bioImage; ?>">

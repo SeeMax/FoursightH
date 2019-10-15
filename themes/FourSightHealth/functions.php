@@ -540,6 +540,21 @@ function create_post_type_authorbios()
         'menu_position' => 4
         )
     );
+
+    register_post_type( 'speaking',
+        array(
+            'labels' => array(
+                'name' => ('Speaking Engagements'),
+                'singular_name' => ('Speaking Engagements')
+            ),
+        'public' => true,
+        // 'has_archive' => true,
+        'rewrite' => array('slug' => 'speaking'),
+        'supports' => array('title','editor'),
+        'menu_icon' => 'dashicons-megaphone',
+        'menu_position' => 4
+        )
+    );
 }
 
 function create_post_type_mailchimpForms()
