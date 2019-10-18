@@ -26,7 +26,7 @@
 					<div class="fullbar c-width-75">
 						<!-- CUSTOM PAGINATION QUERY -->
 						<?php $temp = $wp_query; $wp_query = null; $wp_query = new WP_Query();
-						  $wp_query->query('showposts=5&post_type=post'.'&paged='.$paged);
+						  $wp_query->query('showposts=5&post_type=post&category__not_in=229'.'&paged='.$paged);
 						  while ($wp_query->have_posts()) : $wp_query->the_post();
 						?>
 							<div class="single-insight">
@@ -60,7 +60,7 @@
 								<?php endif;?>
 								<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 								<div class="insight-author-date">
-									<?php if( has_category( $category = 'podcasts')):?>
+									<?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
 			              <?php echo get_the_date(); ?>
 			            <?php else:?>
 			              By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
@@ -79,6 +79,15 @@
 											</div>
 											<div class="button">
 												<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sight-health/market-corner-conversations' target="_blank"></a>
+												Listen on Stitcher
+											</div>
+				            <?php elseif(has_category($category = 'house-calls')):?>
+				              <div class="button">
+												<a class="c-block-fill" href='https://itunes.apple.com/us/podcast/house-calls/id1483699530?mt=2' target="_blank"></a>
+												Listen on Itunes
+											</div>
+											<div class="button">
+												<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/house-calls-2' target="_blank"></a>
 												Listen on Stitcher
 											</div>
 				            <?php else:?>

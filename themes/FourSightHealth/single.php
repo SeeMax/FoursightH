@@ -50,7 +50,7 @@
           <?php endif;?>
           <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
           <div class="insight-author-date">
-            <?php if( has_category( $category = 'podcasts')):?>
+            <?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
               <?php echo get_the_date(); ?>
             <?php else:?>
 							<?php if ( get_field('custom_authors')) :?>
@@ -113,6 +113,15 @@
 								<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sight-health/market-corner-conversations' target="_blank"></a>
 								Listen on Stitcher
 							</div>
+						<?php elseif(has_category($category = 'house-calls')):?>
+							<div class="button">
+								<a class="c-block-fill" href='https://itunes.apple.com/us/podcast/house-calls/id1483699530?mt=2' target="_blank"></a>
+								Listen on Itunes
+							</div>
+							<div class="button">
+								<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/house-calls-2' target="_blank"></a>
+								Listen on Stitcher
+							</div>
 						<?php endif;?>
 						<!-- Loop The Author Bios If They Are Selected -->
 						<?php $post_objects = get_field('author_bios');
@@ -143,7 +152,7 @@
 							</div>
 						<?php else:?>
 						<!-- Show Dave Bio if not a podcast -->
-							<?php if( has_category( $category = 'podcasts')):?>
+							<?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
 
 
 							<?php else:?>

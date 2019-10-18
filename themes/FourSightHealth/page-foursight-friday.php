@@ -1,5 +1,5 @@
-<?php /* Template Name: Speaking Engagements */ get_header(); ?>
-	<main class="speaking-engagements-page" role="main">
+<?php /* Template Name: 4sight Fridays */ get_header(); ?>
+	<main class="speaking-engagements-page 4sight-friday-page" role="main">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<section class="hero-section">
 				<div class="content">
@@ -14,23 +14,17 @@
 					<?php get_template_part( 'partials/_custom-sidebar-two' ); ?>
 					<div class="fullbar c-width-75">
 						<section class="speaking-section">
-							<?php $args = array('post_type' => 'speaking',);$the_query = new WP_Query( $args );?>
+							<?php $args = array('post_type' => 'foursight-friday',);$the_query = new WP_Query( $args );?>
 							<?php if ( $the_query->have_posts() ) :?>
 								<?php while ( $the_query->have_posts() ) : $the_query->the_post();?>
 									<div class="single-speaking">
 										<?php
-											$theDate = get_field('speaking_date');
-											$eventLocation =  get_field('speaking_location');
 											$eventLink =  get_field('speaking_link');
 											$eventLinkText =  get_field('speaking_link_text');
 										?>
-										<?php if($theDate):?>
-											<h5><?php echo $theDate;?></h5>
-										<?php endif;?>
+										<h5><?php the_date();?></h5>
 										<h2><?php the_title();?></h2>
-										<?php if($eventLocation):?>
-											<h5><?php echo $eventLocation;?></h5>
-										<?php endif; ?>
+										By&nbsp;<?php coauthors_posts_links(); ?>
 										<?php the_content();?>
 										<?php if($eventLink):?>
 											<div class="button white-button">

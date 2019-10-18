@@ -555,6 +555,23 @@ function create_post_type_authorbios()
         'menu_position' => 4
         )
     );
+
+    register_post_type( 'foursight-friday',
+        array(
+            'labels' => array(
+                'name' => ('4sight Friday'),
+                'singular_name' => ('4sigh Friday')
+            ),
+        'public' => true,
+        // 'has_archive' => true,
+        'rewrite' => array('slug' => 'foursight-friday'),
+        'supports' => array('title','editor'),
+        'menu_icon' => 'dashicons-clock',
+        'menu_position' => 4
+        )
+    );
+
+
 }
 
 function create_post_type_mailchimpForms()
@@ -1067,6 +1084,14 @@ function metorik_hide_shipping_when_free_is_available( $rates ) {
 }
 add_filter( 'woocommerce_package_rates', 'metorik_hide_shipping_when_free_is_available', 100 );
 
+
+
+add_filter('coauthors_supported_post_types', function( $post_types ) {
+
+		$post_types[] = 'foursight-friday';
+		return $post_types;
+	}
+);
 //
 // /**
 //  * Hide free shipping when another method is available.
