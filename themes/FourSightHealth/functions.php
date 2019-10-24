@@ -1085,13 +1085,30 @@ function metorik_hide_shipping_when_free_is_available( $rates ) {
 add_filter( 'woocommerce_package_rates', 'metorik_hide_shipping_when_free_is_available', 100 );
 
 
-
+// Add Multi Authors Plugin to 4sight Friday Posts
 add_filter('coauthors_supported_post_types', function( $post_types ) {
 
 		$post_types[] = 'foursight-friday';
 		return $post_types;
 	}
 );
+
+
+/**
+ * Add Custom Post Types to Author Archives
+ */
+function post_types_author_archives($query) {
+
+	// Add 'videos' post type to author archives
+	if ( $query->is_author )
+		$query->set( 'post_type', array('foursight-friday', 'post') );
+
+	// Remove the action after it's run
+	remove_action( 'pre_get_posts', 'post_types_author_archives' );
+}
+add_action( 'pre_get_posts', 'post_types_author_archives' );
+
+
 //
 // /**
 //  * Hide free shipping when another method is available.

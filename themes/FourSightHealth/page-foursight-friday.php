@@ -32,12 +32,13 @@
 												<?php echo $eventLinkText;?>
 											</div>
 										<?php endif; ?>
+										<br />
+										<br />
 									</div>
 								<?php endwhile;?>
 							<?php endif; ?>
 							<?php wp_reset_query(); ?><!-- END SPEAKING LOOP -->
 						</section>
-
 					</div><!-- Full Bar -->
 				</div><!-- Main Section Content -->
 			</section><!-- Main Section -->

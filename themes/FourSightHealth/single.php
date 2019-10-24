@@ -115,7 +115,7 @@
 							</div>
 						<?php elseif(has_category($category = 'house-calls')):?>
 							<div class="button">
-								<a class="c-block-fill" href='https://itunes.apple.com/us/podcast/house-calls/id1483699530?mt=2' target="_blank"></a>
+								<a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/house-calls/id1483699530' target="_blank"></a>
 								Listen on Itunes
 							</div>
 							<div class="button">

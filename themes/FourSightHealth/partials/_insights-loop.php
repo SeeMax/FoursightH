@@ -59,7 +59,7 @@
                   </div>
                 <?php elseif(has_category($category = 'house-calls')):?>
                   <div class="button">
-                    <a class="c-block-fill" href='https://itunes.apple.com/us/podcast/house-calls/id1483699530?mt=2' target="_blank"></a>
+                    <a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/house-calls/id1483699530' target="_blank"></a>
                     Listen on Itunes
                   </div>
                   <div class="button">
@@ -73,10 +73,30 @@
                   </div>
                   <div class="pdf-link">
                     <?php $pdfID = get_field('pdf_link');?>
-                    <?php if ($pdfID) :	$url = wp_get_attachment_url( $pdfID );?>
-                      <a href="<?php echo $url;?>" target="_blank">
-                        Download <i class="far fa-arrow-to-bottom"></i>
-                      </a>
+                    <?php $pdfIDnew = get_field('pdf_link_new');?>
+
+                    <?php if ($pdfID):?>
+                      <?php $url = wp_get_attachment_url( $pdfID );?>
+                      <?php if ($url):?>
+                        <a class="oldID" href="<?php echo $url;?>" target="_blank">
+                          Download <i class="far fa-arrow-to-bottom"></i>
+                        </a>
+                      <?php else: ?>
+                        <a class="oldURL" href="<?php echo $pdfID;?>" target="_blank">
+                          Download <i class="far fa-arrow-to-bottom"></i>
+                        </a>
+                      <?php endif; ?>
+                    <?php elseif ($pdfIDnew):?>
+                      <?php $urlnew = wp_get_attachment_url( $pdfIDnew );?>
+                      <?php if ($urlnew):?>
+                        <a class="newURL" href="<?php echo $urlnew;?>" target="_blank">
+                          Download <i class="far fa-arrow-to-bottom"></i>
+                        </a>
+                      <?php else: ?>
+                        <a class="newID" href="<?php echo $pdfIDnew;?>" target="_blank">
+                          Download <i class="far fa-arrow-to-bottom"></i>
+                        </a>
+                      <?php endif; ?>
                     <?php endif; ?>
                   </div>
                  <?php endif;?>
