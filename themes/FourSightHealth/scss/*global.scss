@@ -110,11 +110,13 @@ ul {
 		margin-left:14px;
 
 		&:before {
-			content:'–';
+			content:'•';
+			font-weight:800;
 			color:$green;
 			position: absolute;
 			left:-14px;
-			top:0px;
+			top:-2px;
+			font-size:20px;
 		}
 	}
 }

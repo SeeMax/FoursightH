@@ -256,11 +256,13 @@ ul {
     position: relative;
     margin-left: 14px; }
     ul li:before {
-      content: '–';
+      content: '•';
+      font-weight: 800;
       color: #A8C643;
       position: absolute;
       left: -14px;
-      top: 0px; }
+      top: -2px;
+      font-size: 20px; }
 
 ol {
   list-style: none;
