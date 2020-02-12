@@ -44,9 +44,9 @@
 						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
 					</div>
 			</footer>
-			<div class="sub-footer">
+			<!-- <div class="sub-footer">
 				All securities offered through Bradley Woods & Co. Ltd., member <a href="http://www.finra.org/" target="_blank">FINRA</a> and <a href="https://www.sipc.org/" target="_blank">SIPC</a>. 4sight Health and Bradley Woods & Co. Ltd. are independent entities. Officers of 4sight Health are licensed registered representatives of Bradley Woods & Co. Ltd.
-			</div>
+			</div> -->
 			<?php wp_footer(); ?>
 		</div><!-- WRAPPER -->
 		<?php get_template_part( 'partials/_module-popup' ); ?>
