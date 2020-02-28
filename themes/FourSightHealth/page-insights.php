@@ -51,7 +51,7 @@
 									</h5>
 								<?php else: ?>
 									<?php foreach( $normalCategory as $category ):?>
-										<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
+										<?php if($category->name !== 'podcast' && $category->name !=='Uncategorized'):?>
 											<h5 class="featured-category-term">
 												<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;&nbsp;<span class="category-divider">|</span>&nbsp;&nbsp;
 											</h5>
@@ -60,7 +60,7 @@
 								<?php endif;?>
 								<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 								<div class="insight-author-date">
-									<?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
+									<?php if( has_category( $category->name = 'podcast') || has_category($category->name = 'house-calls')):?>
 			              <?php echo get_the_date(); ?>
 			            <?php else:?>
 			              By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
@@ -72,7 +72,7 @@
 										<?php the_excerpt();?>
 									</p>
 									<div class="preview-links-area">
-										<?php if( has_category( $category = 'podcasts')):?>
+										<?php if( has_category( $category->name = 'podcast')):?>
 				              <div class="button">
 												<a class="c-block-fill" href='https://itunes.apple.com/us/podcast/4sighthealth-market-corner-conversations/id1302461771?mt=2' target="_blank"></a>
 												Listen on Itunes
@@ -81,7 +81,7 @@
 												<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sight-health/market-corner-conversations' target="_blank"></a>
 												Listen on Stitcher
 											</div>
-				            <?php elseif(has_category($category = 'house-calls')):?>
+				            <?php elseif(has_category($category->name = 'house-calls')):?>
 				              <div class="button">
 												<a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/house-calls/id1483699530' target="_blank"></a>
 												Listen on Itunes

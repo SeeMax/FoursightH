@@ -50,7 +50,7 @@
           <?php endif;?>
           <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
           <div class="insight-author-date">
-            <?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
+            <?php if( has_category( $category = 'podcast') || has_category($category = 'house-calls')):?>
               <?php echo get_the_date(); ?>
             <?php else:?>
 							<?php if ( get_field('custom_authors')) :?>
@@ -69,7 +69,7 @@
 							<!-- IF THERE IS A HIGHLIGHTED TERM -->
 							<?php if($term):?>
 								<?php foreach( $normalCategory as $category ):?>
-		            	<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized' && $category->name !==$term->name):?>
+		            	<?php if($category->name !== 'podcast' && $category->name !=='Uncategorized' && $category->name !==$term->name):?>
 	              		<h5>
 	                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
 	              		</h5>
@@ -78,7 +78,7 @@
 							<!-- IF THERE IS NOT A HIGHLIGHTED TERM -->
 							<?php else:?>
 								<?php foreach( $normalCategory as $category ):?>
-		            	<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
+		            	<?php if($category->name !== 'podcast' && $category->name !=='Uncategorized'):?>
 	              		<h5>
 	                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
 	              		</h5>
@@ -104,8 +104,8 @@
 				    <?php endif; ?>
 
             <?php the_content();?>
-						<?php if( has_category( $category = 'podcasts')):?>
-							<div class="button">
+						<?php if( has_category( $category->name = 'podcast')):?>
+							<div class="button mcc-button">
 								<a class="c-block-fill" href='https://itunes.apple.com/us/podcast/4sighthealth-market-corner-conversations/id1302461771?mt=2' target="_blank"></a>
 								Listen on Itunes
 							</div>
@@ -113,8 +113,8 @@
 								<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sight-health/market-corner-conversations' target="_blank"></a>
 								Listen on Stitcher
 							</div>
-						<?php elseif(has_category($category = 'house-calls')):?>
-							<div class="button">
+						<?php elseif( has_category( $category->name = 'house-calls')):?>
+							<div class="button hc-button">
 								<a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/house-calls/id1483699530' target="_blank"></a>
 								Listen on Itunes
 							</div>
@@ -152,7 +152,7 @@
 							</div>
 						<?php else:?>
 						<!-- Show Dave Bio if not a podcast -->
-							<?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
+							<?php if( has_category( $category = 'podcast') || has_category($category = 'house-calls')):?>
 
 
 							<?php else:?>
