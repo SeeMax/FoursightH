@@ -37,7 +37,7 @@
 									<a class="c-block-fill" href="<?php the_permalink();?>"></a>
 									<h3><?php the_title();?></h3>
 									<h6 class="preview-author-date">
-										<?php the_author();?> <span>| <?php echo get_the_date('M j, Y'); ?></span>
+										<?php coauthors();?> <span>| <?php echo get_the_date('M j, Y'); ?></span>
 									</h6>
 
 									<?php $post_id = get_the_ID();?>

@@ -1,4 +1,4 @@
-$(function mobileMenu() {
+	$(function mobileMenu() {
 
 	$(".menuToggle").on('click', function() {
 		// console.log("click")
