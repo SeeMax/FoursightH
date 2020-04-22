@@ -1,47 +1,40 @@
 <div class="custom-sidebar c-width-25">
-  <div class="custom-sidebar-box podcast-sidebar">
-    <?php $group = get_field('podcast_sidebar', 'options'); if( $group ): ?>
-	    <h3><?php echo $group['title']; ?></h3>
+  <?php $group = get_field('podcast_sidebar', 'options'); if( $group ): ?>
+    <?php if ($group['title']):?>
+      <div class="custom-sidebar-box podcast-sidebar">
+  	    <h3><?php echo $group['title']; ?></h3>
+        <p><?php echo $group['text'];?></p>
+        <div class="button text-button">
+          <a class="c-block-fill" href="<?php echo $group['link_destination'];?>"></a>
+          <?php echo $group['link_text'];?>
+        </div>
+      </div>
     <?php endif; ?>
-    <p>
-      <?php echo $group['text'];?>
-    </p>
-    <div class="button text-button">
-      <?php if ( have_rows( 'podcast_sidebar', 'options' ) ) : ?>
-        <?php while ( have_rows( 'podcast_sidebar', 'options' ) ) : the_row();?>
-          <?php $podcastCategory = get_sub_field( 'link_destination' );?>
-          <a class="c-block-fill" href='<?php echo get_category_link($podcastCategory);?>'></a>
-          Listen Now
-        <?php endwhile; ?>
-      <?php endif; ?><!-- End Sub Repeater -->
-    </div>
-  </div>
-  <div class="custom-sidebar-box ask-dave-sidebar">
-    <?php $group = get_field('ask_sidebar', 'options'); if( $group ): ?>
-	    <h3><?php echo $group['title']; ?></h3>
+  <?php endif; ?>
+  <?php $group = get_field('ask_sidebar', 'options'); if( $group ): ?>
+    <?php if ($group['title']):?>
+      <div class="custom-sidebar-box ask-dave-sidebar">
+	      <h3><?php echo $group['title']; ?></h3>
+        <p><?php echo $group['text'];?></p>
+        <div class="button text-button">
+          <a class="c-block-fill" href="<?php echo $group['link_destination'];?>"></a>
+          <?php echo $group['link_text'];?>
+        </div>
+      </div>
     <?php endif; ?>
-
-    <p>
-      <?php echo $group['text'];?>
-    </p>
-    <div class="button text-button">
-      <a class="c-block-fill" href="<?php echo $group['link_destination'];?>"></a>
-      <?php echo $group['link_text'];?>
-    </div>
-  </div>
-  <div class="custom-sidebar-box subscribe-sidebar">
-    <?php $group = get_field('subscribe_sidebar', 'options'); if( $group ): ?>
-	    <h3><?php echo $group['title']; ?></h3>
+  <?php endif; ?>
+  <?php $group = get_field('subscribe_sidebar', 'options'); if( $group ): ?>
+    <?php if ($group['title']):?>
+      <div class="custom-sidebar-box subscribe-sidebar">
+	      <h3><?php echo $group['title']; ?></h3>
+        <p><?php echo $group['text'];?></p>
+        <div class="button text-button">
+          <a class="c-block-fill" href="<?php echo $group['link_destination'];?>"></a>
+          <?php echo $group['link_text'];?>
+        </div>
+      </div>
     <?php endif; ?>
-
-    <p>
-      <?php echo $group['text'];?>
-    </p>
-    <div class="button text-button">
-      <a class="c-block-fill" href="<?php echo $group['link_destination'];?>"></a>
-      <?php echo $group['link_text'];?>
-    </div>
-  </div>
+  <?php endif; ?>
   <div class="custom-sidebar-box articles-sidebar">
     <?php $group = get_field('article_sidebar', 'option'); if( $group ): ?>
 	    <h3><?php echo $group['title']; ?></h3>
