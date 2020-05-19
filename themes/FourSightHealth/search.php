@@ -40,7 +40,7 @@
 								</h5>
 							<?php else: ?>
 								<?php foreach( $normalCategory as $category ):?>
-									<?php if($category->name !== 'Podcasts' && $category->name !=='Uncategorized'):?>
+									<?php if($category->name !== 'Podcast' && $category->name !=='Uncategorized' && $category->name !=='4sight Friday Podcast'):?>
 										<h5 class="featured-category-term">
 											<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;&nbsp;<span class="category-divider">|</span>&nbsp;&nbsp;
 										</h5>
@@ -49,7 +49,7 @@
 							<?php endif;?>
 							<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 							<div class="insight-author-date">
-								<?php if( has_category( $category = 'podcasts') || has_category($category = 'house-calls')):?>
+								<?php if( has_category( $category = 'podcast') || has_category($category = 'house-calls') || has_category($category = '4sight-friday-podcast')):?>
 									<?php echo get_the_date(); ?>
 								<?php else:?>
 									By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>
@@ -77,6 +77,15 @@
 	                  </div>
 	                  <div class="button">
 	                    <a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/house-calls-2' target="_blank"></a>
+	                    Listen on Stitcher
+	                  </div>
+									<?php elseif(has_category($category->name = '4sight-friday-podcast')):?>
+	                  <div class="button">
+	                    <a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/4sight-friday/id' target="_blank"></a>
+	                    Listen on Itunes
+	                  </div>
+	                  <div class="button">
+	                    <a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/4sight-friday' target="_blank"></a>
 	                    Listen on Stitcher
 	                  </div>
 	                <?php else:?>

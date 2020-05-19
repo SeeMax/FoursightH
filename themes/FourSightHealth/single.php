@@ -50,7 +50,7 @@
           <?php endif;?>
           <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
           <div class="insight-author-date">
-            <?php if( has_category( $category = 'podcast') || has_category($category = 'house-calls')):?>
+            <?php if( has_category( $category = 'podcast') || has_category($category = 'house-calls') || has_category($category = '4sight-friday-podcast')):?>
               <?php echo get_the_date(); ?>
             <?php else:?>
 							<?php if ( get_field('custom_authors')) :?>
@@ -69,7 +69,7 @@
 							<!-- IF THERE IS A HIGHLIGHTED TERM -->
 							<?php if($term):?>
 								<?php foreach( $normalCategory as $category ):?>
-		            	<?php if($category->name !== 'podcast' && $category->name !=='Uncategorized' && $category->name !==$term->name):?>
+		            	<?php if($category->name !== 'Podcast' && $category->name !=='Uncategorized' && $category->name !==$term->name):?>
 	              		<h5>
 	                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
 	              		</h5>
@@ -78,7 +78,7 @@
 							<!-- IF THERE IS NOT A HIGHLIGHTED TERM -->
 							<?php else:?>
 								<?php foreach( $normalCategory as $category ):?>
-		            	<?php if($category->name !== 'podcast' && $category->name !=='Uncategorized'):?>
+		            	<?php if($category->name !== 'Podcast' && $category->name !=='Uncategorized'):?>
 	              		<h5>
 	                		<a href="<?php echo get_category_link( $category->term_id );?>"><?php echo $category->cat_name;?></a>&nbsp;<span class="category-divider">|</span>&nbsp;
 	              		</h5>
@@ -120,6 +120,15 @@
 							</div>
 							<div class="button">
 								<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/house-calls-2' target="_blank"></a>
+								Listen on Stitcher
+							</div>
+						<?php elseif(has_category($category->name = '4sight-friday-podcast')):?>
+							<div class="button">
+								<a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/4sight-friday/id?????????' target="_blank"></a>
+								Listen on Itunes
+							</div>
+							<div class="button">
+								<a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/4sight-friday????' target="_blank"></a>
 								Listen on Stitcher
 							</div>
 						<?php endif;?>
