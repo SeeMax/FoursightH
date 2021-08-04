@@ -20,7 +20,7 @@
 
 					<section class="first-section">
 						<div class="content">
-							<?php the_content();?>
+							<?php the_field('lead_section'); ?>
 						</div>
 					</section>
 

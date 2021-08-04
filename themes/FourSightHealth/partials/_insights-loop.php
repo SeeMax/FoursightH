@@ -35,7 +35,7 @@
           <?php endif;?>
           <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
           <div class="insight-author-date">
-            <?php if( has_category( $category->name = 'podcast') || has_category($category->name = 'house-calls') || has_category($category = '4sight-friday-podcast')):?>
+            <?php if( in_category('podcast') || in_category('house-calls') || in_category('4sight-friday-podcast')):?>
               <?php echo get_the_date(); ?>
             <?php else:?>
               By <?php coauthors_posts_links(); ?> | <?php echo get_the_date(); ?>

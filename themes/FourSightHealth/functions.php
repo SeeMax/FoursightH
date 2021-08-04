@@ -725,6 +725,37 @@ function create_post_type_generalfeature()
 //     );
 // }
 
+
+function post_channel_tax() {
+    $labels = array(
+        'name' => 'Channel',
+        'singular_name' => 'Channel',
+        'search_items' => 'Search Channels',
+        'all_items' => 'All Channels',
+        'edit_item' => 'Edit Channel',
+        'parent_item' => 'Parent Channel',
+        'parent_item_colon' => 'Parent Taxonomy:',
+        'update_item' => 'Update Channel',
+        'add_new_item' => 'Add New Channel',
+        'new_item_name' => 'New Channel',
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'rewrite' => array('slug' => 'channel', 'with_front' => false),
+        'show_in_nav_menus' => true,
+        'labels' => $labels,
+        'show-admin-column' => true,
+        'show_in_nav_menus' => true
+    );
+    register_taxonomy('taxonomy', 'post', $args);
+
+    unset($labels);
+    unset($args);
+}
+add_action('init', 'post_channel_tax');
+
+
 // CREATE A GLOBAL OPTIONS PAGE
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page(array(

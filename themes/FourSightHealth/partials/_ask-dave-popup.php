@@ -10,10 +10,10 @@
       <a class="c-block-fill" href="mailto:<?php the_field('email', 'option'); ?>"></a>
       <h3><?php the_field('email', 'option'); ?></h3>
     </div>
-    <div class="popup-contact-line">
+    <!-- <div class="popup-contact-line">
       <i class="fal fa-phone"></i>
       <a class="c-block-fill" href="tel:<?php the_field('phone', 'option'); ?>"></a>
       <h3><?php the_field('phone', 'option'); ?></h3>
-    </div>
+    </div> -->
   </div>
 </div>
