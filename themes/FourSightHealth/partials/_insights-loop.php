@@ -48,7 +48,7 @@
             </p>
             <div class="preview-links-area">
               <div class="preview-links-area">
-                <?php if($category->name = 'Podcast'):?>
+                <?php if( has_category( $category->name = 'podcast')):?>
                   <div class="button">
                     <a class="c-block-fill" href='https://itunes.apple.com/us/podcast/4sighthealth-market-corner-conversations/id1302461771?mt=2' target="_blank"></a>
                     Listen on Itunes
@@ -57,7 +57,7 @@
                     <a class="c-block-fill" href='https://www.stitcher.com/podcast/4sight-health/market-corner-conversations' target="_blank"></a>
                     Listen on Stitcher
                   </div>
-                <?php elseif($category->name = 'House Calls'):?>
+                <?php elseif(has_category($category->name = 'house-calls')):?>
                   <div class="button">
                     <a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/house-calls/id1483699530' target="_blank"></a>
                     Listen on Itunes
@@ -66,13 +66,13 @@
                     <a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/house-calls-2' target="_blank"></a>
                     Listen on Stitcher
                   </div>
-                <?php elseif($category->name = '4sight Friday Podcast'):?>
+                <?php elseif(has_category($category->name = '4sight-friday-podcast')):?>
                   <div class="button">
-                    <a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/4sight-friday/id' target="_blank"></a>
+                    <a class="c-block-fill" href='https://podcasts.apple.com/us/podcast/4sight-friday/idxxxxxxx' target="_blank"></a>
                     Listen on Itunes
                   </div>
                   <div class="button">
-                    <a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/4sight-friday' target="_blank"></a>
+                    <a class="c-block-fill" href='https://www.stitcher.com/podcast/4sighthealth/4sight-fridayxxxxxx' target="_blank"></a>
                     Listen on Stitcher
                   </div>
                 <?php else:?>
